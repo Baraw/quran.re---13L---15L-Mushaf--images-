@@ -1,0 +1,9 @@
+<IfModule mod_headers.c>
+    <FilesMatch "\.js$">
+        Header set Cache-Control "max-age=86400, public"
+    </FilesMatch>
+</IfModule>
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType application/javascript "access plus 1 day"
+</IfModule>

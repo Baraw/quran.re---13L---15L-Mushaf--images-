@@ -1,0 +1,453 @@
+	#moushaf
+	{
+			/* max-width:500px; */
+			margin-top:-30px;
+			margin-bottom:-40px;
+			/* margin-inline:5px; */
+			/* position: relative; */
+			/* display: inline-block; pour les boutons de meme taille */ 
+			
+			 /* pour l'effet pls pages */
+			/* width: 99%;  */
+			/* box-shadow: 0px -4px 4px 0px rgb(0 0 0 / 40%); */
+			/* --- */
+	}
+	
+	/* #moushaf::before	 */
+	/* { */
+		/* content: ""; */
+		/* position: absolute; */
+		/* top: 0; */
+		/* left: 0; */
+		/* width: 99.5%; */
+		/* height: 200%; */
+		/* box-shadow: 1px 0px 4px 0px rgb(0 0 0 / 50%); */
+	/* } */
+	
+	#ombreGauche, #ombreDroite
+	{	position:absolute;	height:300px;	width:20px;	}
+	
+	/*
+	mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 96.5%, rgba(0, 0, 0, 0.4) 96.8%, rgba(0, 0, 0, 1) 97.2%, rgba(0, 0, 0, 0.2) 97.5%, rgba(0, 0, 0, 1) 99.9%)
+	*/
+	
+	#parametres	
+	{
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+	}
+	
+	
+	#selectSOURATE
+	{
+			/* float:left; */
+			min-width:25%;
+			/* margin-top:80px; */
+	}	
+	
+	.lesdeuxSELECT	
+	{
+			position: fixed;
+			bottom: 20px;
+			/* top: 50%; */
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: flex;
+			
+	}
+	
+	#selectSIPARAH
+	{
+			/* float:right; */
+			min-width:25%;
+			margin-left: 2px;
+			/* margin-top:80px; */
+	}
+	
+	
+	.imagePORTRAIT
+	{
+		width:105%;
+	}
+	
+	
+	
+	/* #boutonPRECEDENT,#boutonSUIVANT */
+	/* { */
+			/* width:120px; */
+			/* position:fixed; */
+			
+			/* bottom:10px; */
+			/* height:50px; */
+	/* }	 */
+	
+	/* SUR MOBILE DIFFERENT CSS, CAD :*/
+	#pagSuiv, #pagPrec
+	{   	 width: 15%;
+			position: absolute;
+			/* margin-top:30px; /* comme #moushaf */ 
+			/* height:650px; */
+			margin-top: -10px; /* pour que l'ombre ne dépasse pas jusque en bas) */
+			z-index:4;
+	}
+	#pagSuiv
+	{ 
+		left:0;
+	
+	}
+	#pagPrec
+	{
+		right:0;
+	}
+	
+	#pageetfleches	
+	{	  
+				/* padding-top: 30px; */
+				margin-top: 30px;
+				/* margin-bottom: 15px; */
+				background-color: whitesmoke;
+				z-index: 5;
+				position: relative;
+	}
+	
+	
+	.ombrePageADroite {		box-shadow: inset -7px 0px 7px 0px rgb(0 0 0 / 35%), inset -10px 0px 8px 0 rgb(0 0 0 / 25%);	animation: shadow-animation-droite 0.1s linear; /* Ajustez la durée et le timing de l'animation selon vos besoins */	}
+	.ombrePageAGauche {	 	box-shadow: inset 7px 0px 7px 0px rgb(0 0 0 / 35%), inset 10px 0px 8px 0 rgb(0 0 0 / 25%);		animation: shadow-animation-gauche 0.1s linear;  }
+	
+	
+	.plisPagesDroite, .plisPagesGauche	
+	{	    
+	/* z-index: -1; */
+    /* position: relative;	 */
+	}
+	.plisPagesDroite {	margin-left: -3%;		
+		/* mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 96.5%, rgba(0, 0, 0, 0.1) 96.8%, rgba(0, 0, 0, 1) 97.2%, rgba(0, 0, 0, 0.05) 97.5%, rgba(0, 0, 0, 1) 99.9%);*/
+		 mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 95.7%, rgba(0, 0, 0, 0.1) 96.2%, rgba(0, 0, 0, 1) 96.7%, rgba(0, 0, 0, 0.1) 97.2%, rgba(0, 0, 0, 1) 97.7%);
+		
+		}
+	.plisPagesGauche {	margin-left: -2.8%;		
+		/* mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 95.5%, rgba(0, 0, 0, 0.1) 95.8%, rgba(0, 0, 0, 1) 96.2%, rgba(0, 0, 0, 0.05) 96.5%, rgba(0, 0, 0, 1) 99.9%); /* -1% que lautre côté */ 
+		 mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 95%, rgba(0, 0, 0, 0.1) 95.5%, rgba(0, 0, 0, 1) 96%, rgba(0, 0, 0, 0.1) 96.5%, rgba(0, 0, 0, 1) 97%);
+		}
+	
+	.ombrePageADroite, .ombrePageAGauche 	{ 	/*z-index:1;	height:95%;	*/	}
+	
+	#boutonPRECEDENT,#boutonSUIVANT
+	{
+			width:100px;
+			height:50px;
+			/* margin-top:-20px; */
+			color:white;
+	}
+		
+	#boutonSUIVANT 
+	{
+			/* background-color:deepskyblue; */
+			float: left;
+			position: relative;
+			/* position: absolute; */
+			left: 0px;
+	}
+	
+	
+	#boutonPRECEDENT
+	{
+			/* background-color:#da5d5d; */
+			/* float:right; */
+			/* position: relative; */
+			/* position: absolute; */
+			right: 0px;
+	}
+	/* .boutonFlottant */
+	/* { */
+			/* position: absolute; */
+			/* margin-top: -15px; */
+		/* bottom: 40px; */
+			/* top: 680px; */
+	/* } */
+	
+	.boutonPC
+	{
+			display:none;
+	}
+	
+	#bSuivant
+	{
+			left: 5%;
+			float: left;
+			margin-top: -10px;
+			position:relative;
+	}
+	
+	#bSuivant, #bPrecedent,#boutonSUIVANT,#boutonPRECEDENT	{	z-index:10;	}
+	
+	#bPrecedent
+	{
+		right:5%;
+		float: right;
+		margin-top: -10px;
+		position:relative;
+	}
+	
+	
+	#selectSDQ
+	{	
+		/* padding-top:40px; */
+		/* background-color:#f5f5f5 ;  */
+		z-index:10; 
+		position:relative;
+		padding-bottom:5px;
+		margin-top: -6px;
+		}
+	
+		
+		#selectLecture {	padding-top: 20px;	}
+	
+	
+		/* -------------------------------------------------------------------------------------- */
+	/* VERSION seuelement tél */
+	
+	@media only screen and (max-width: 600px)
+	{
+		#selectLecture {
+			background-color: whitesmoke;
+			z-index: 4;
+			position: relative;
+		}	
+		
+		#selectSDQ	{	
+		background: linear-gradient(0deg, rgb(255 255 255 / 90%) 	0%, whitesmoke 5%);
+		}
+	}
+	
+	/* -------------------------------------------------------------------------------------- */
+	/* VERSION AU DELA DE TELEPHONE */
+	
+	@media only screen and (min-width: 700px) 
+	{
+			.imagePORTRAIT
+		{
+			/* margin-left: 10px; */
+				background-color: grey;
+		}
+	
+			.plisPagesDroite {	    
+				padding-right: 1px;
+				mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 98%, rgba(0, 0, 0, 0.5) 98.5%, rgba(0, 0, 0, 1) 99%, rgba(0, 0, 0, 0.5) 99.5%, rgba(0, 0, 0, 1) 99.9%);	
+			}
+			.plisPagesGauche {	
+				padding-left: 1px;
+				mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 98%, rgba(0, 0, 0, 0.5) 98.5%, rgba(0, 0, 0, 1) 99%, rgba(0, 0, 0, 0.5) 99.5%, rgba(0, 0, 0, 1) 99.9%);	}
+			}
+		
+		  #selectPAGE {   max-width:55px;     font-size: large; position: relative;}	
+		  /* #selectSDQ	{	background:none;	} */
+		  
+	}
+	
+	/* -------------------------------------------------------------------------------------- */
+
+	
+	
+	/* -------------------------------------------------------------------------------------- */
+			/* VERSION TABLETTE */
+	
+
+	@media only screen and (min-width: 600px) and (max-width : 768px)  
+	{	/* For tablette: */
+		
+		#moushaf
+		{
+			/* max-width:250px; */
+			margin-top:-50px;
+			max-height:80%;
+		}
+		.imagePORTRAIT
+		{
+			width:85%;
+			margin-left: 0px;
+		}
+		
+		
+		#selectSDQ	{	background:none;	}
+		
+		#boutonPRECEDENT, #boutonSUIVANT	{	width:120px;	}
+	}
+	
+	@media only screen and (min-width : 769px) and (max-width : 1024px) 
+	{	/* For desktop: */
+		
+		#moushaf
+		{
+			max-width:75%;
+			margin-top:-50px;
+		}
+		
+		#boutonPRECEDENT, #boutonSUIVANT	{	width:150px;	}
+	}
+	}
+	
+	/* -------------------------------------------------------------------------------------- */
+			/* VERSION PC */
+		
+		@media only screen and (min-width: 1024px) and (max-width : 1367px) 
+	{	/* For desktop: */
+			/* #moushaf */
+		/* { */
+			/* max-width:430px; */
+		/* } */
+		
+			#boutonPRECEDENT, #boutonSUIVANT	{	width:200px;	}
+	}		
+	/* PC ++ */
+	
+	@media only screen and (min-width: 1024px) 
+	{
+		#moushaf
+		{
+			max-width:60%;
+		}
+			#selectSDQ {	padding-top:0;}
+		
+		.lesdeuxSELECT	
+		{
+				bottom: 0px;
+				/* top: 50%; */
+		}	
+		
+		/* .boutonFlottant */
+		/* { */
+				/* bottom: 20px; */
+				/* top: 280px; */
+		/* } */
+		
+	
+		#bPrecedent
+		{
+			right:25%;
+			top: -290px;
+
+		}
+		/* #bSuivant, #bPrecedent	{	z-index:10;	} */
+		
+		#bSuivant
+		{
+			left:25%;
+			top: -290px;
+		}
+		
+	}	
+	
+		@media only screen and (min-width: 1200px) 
+	{	/* For desktop: */
+		
+		#moushaf
+		{
+		        max-width: 30%;
+		}
+		
+	}
+	
+	@media only screen and (min-width: 1368px) 
+	{	/* For desktop: */
+		
+		#moushaf
+		{
+			max-width:400px;
+		}
+		.imagePORTRAIT
+		{
+			width:100%;
+			/* position:relative; */
+		}	
+		
+		
+		#ombreJSP
+		{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 99.5%;
+			height: 100%;
+		/* box-shadow: 1px 0px 4px 0px rgb(0 0 0 / 50%); */
+			box-shadow: inset -7px 0px 7px 0px rgb(0 0 0 / 35%), inset -14px 0px 12px 0 rgb(0 0 0 / 25%);
+	
+		}
+		
+		#selectSIPARAH
+		{
+				/* width:50px; */
+				min-width:15%;
+				margin-left: 10px;
+		}
+		
+		#selectSOURATE
+	{
+			/* float:left; */
+			min-width:20%;
+	}
+		#boutonPRECEDENT,#boutonSUIVANT
+	{
+			display:none;
+	}
+		
+
+	
+		#pagSuiv, 	#pagPrec
+		{
+				height: 105%;
+				max-height: 650px;  /* sinon dépasse par en dessous du footer*/
+				width: 20%;
+				position: absolute;
+				display: inline;
+				top:40px;
+			
+		}
+		
+		
+		#pagSuiv
+		{
+			/* background-color: black; */
+			margin-left: -33%;
+			left:auto;
+		}
+		
+		.gauche13tadjwid {	margin-left: -450px;}
+		.gauche13lvert	{	margin-left:	-400px	; }
+		.droite13lvert	{	margin-left:	125px	!important;}
+	
+		#pagPrec
+		{
+			/* background-color:green; */
+			margin-left: 8%;
+			right:auto;
+		}
+		
+		.boutonPC
+		{
+				display:inline;
+				position: absolute;
+				top: 50%;
+		}
+			
+	}
+	
+	
+	/* new 2025 */
+	#testBoutonPCgauche, #testBoutonPCdroit {	display:none;	}
+	
+	
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > img {
+  float: left;
+  width: 100%;
+  position: relative;
+}

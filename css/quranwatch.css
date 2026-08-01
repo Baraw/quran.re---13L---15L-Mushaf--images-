@@ -1,0 +1,70 @@
+
+	.selectMobile
+	{
+		width:80%;
+	}	
+	
+	.lesdeuxSELECT	
+	{
+			position: fixed;
+			bottom: 20px;
+			/* top: 50%; */
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: flex;
+			width:50%;
+	}
+
+	
+	#selectPAGE
+	{
+			max-width: 60px;
+		
+	}
+	
+	.imagePORTRAIT
+	{
+		width:100%;
+	}
+	
+	.bouton
+	{
+		width:49%;
+		font-size: large;
+	}
+	
+	#boutonSUIVANT
+	{
+	background-color:lightblue;	
+	}
+	
+	#boutonPRECEDENT
+	{
+		background-color:#da5d5d;
+	}
+	
+.boutonInvisible
+		{
+			height: 600px;
+			width: 20%;
+			position: absolute;
+			display: inline;
+			/* left: 0; */
+			/* right:0; */
+		}	
+	
+	
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > img {
+  float: left;
+  width: 100%;
+  position: relative;
+}

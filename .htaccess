@@ -1,0 +1,41 @@
+# Redirection vers HTTPS
+#RewriteEngine On
+#RewriteCond %{HTTPS} off
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Empêcher l'accès direct aux sous-dossiers
+Options -Indexes
+
+# Désactiver la possibilité de suivre les liens symboliques
+#Options -FollowSymLinks
+
+# Bloquer l'accès aux fichiers de configuration
+<FilesMatch "(\.htaccess|\.htpasswd|\.ini|\.log|\.conf)">
+  Order allow,deny
+  Deny from all
+  Satisfy All
+</FilesMatch>
+
+# Bloquer l'accès aux fichiers sensibles
+<FilesMatch "\.(db|ini|sh|inc|bak)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Bloquer l'accès à certains types de fichiers
+#<FilesMatch "\.(xml|css|jpe?g|png|gif|js)$">
+#Order deny,allow
+ # Deny from all
+#</FilesMatch>
+
+# Exclure les fichiers HTML de la redirection vers index.html
+#RewriteCond %{REQUEST_URI} !\.(html)$
+
+# Empêcher l'affichage des versions de logiciels
+ServerSignature Off
+
+# Protéger le fichier de configuration
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

@@ -1,0 +1,7 @@
+<IfModule mod_substitute.c>
+    # Active la substitution pour les fichiers HTML
+    AddOutputFilterByType SUBSTITUTE text/html
+
+    # Syntaxe : s|ancien_url|nouveau_url|options
+    Substitute "s|https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/|https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material/|ni"
+</IfModule>

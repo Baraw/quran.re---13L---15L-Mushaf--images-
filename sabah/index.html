@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.png">
+    
+       <!-- Précharger le fichier CSV -->
+        <!-- <link rel="preload" href="data/13l_v1.csv" as="fetch" crossorigin="anonymous"> -->
+        <!-- <link rel="prefetch" href="data/traduction.csv" as="fetch" crossorigin="anonymous"> -->
+        <!-- <link rel="prefetch" href="data/qiraate.json" as="fetch" crossorigin="anonymous"> -->
+        <!-- Images -->
+        <!-- <script src="https://unpkg.com/i18next@21.6.16/dist/umd/i18next.min.js"></script> -->         <!-- Inclure i18next pour la langue -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/beercss@latest/dist/cdn/beer.min.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.11.33/dist/cdn/beer.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js" async></script>
+    <script src="cours_sabah.js" defer></script> 
+      
+<title >Dars Qirât Sabah</title>
+
+<style>
+
+img.pageCours { 
+            margin-top: -15px;
+  }
+
+@media (max-width: 500px) {
+  img.pageCours {
+    max-width: 111%; 
+  }
+}
+
+@media (min-width: 500px) {
+  img.pageCours {
+    max-width: 105%; 
+  }
+}
+
+/* Sur les tablettes (écrans de largeur >= 768px) */
+@media (min-width: 768px) {
+  img.pageCours {
+    max-width: 60%; /* Limite l'image à 50% de la largeur sur tablette */
+  }
+}
+
+/* Sur les PC (écrans de largeur >= 1024px) */
+@media (min-width: 1024px) {
+  img.pageCours  {
+    max-width: 50%; /* Limite l'image à 25% de la largeur sur PC */
+  }
+  
+@media (min-width: 1280px) {
+  img.pageCours  {
+    max-width: 40%; /* Limite l'image à 25% de la largeur sur PC */
+  }
+  
+  @media (min-width: 1600px) {
+  img.pageCours  {
+    max-width: 20%; /* Limite l'image à 25% de la largeur sur PC */
+  }
+</style>
+
+        <!-- LES DONNEES EN FONCTION DE L ONGLET CHOISI -->
+       <meta name="tab-active" content="tabRecap">
+       <meta name="pageActive_tabRecap" content="3">
+       <meta name="pageActive_tabIntegral" content="3">
+ 
+ 
+</head>
+<body >
+<header class="amber black-text">
+  <nav>
+    <button class="circle transparent" data-ui="#menuGlobal">
+       <i>menu</i>
+    </button>
+    <h6 class="small max" >Cours de Qirâate Sab'ah</h6>
+
+    <button class="circle transparent" id="plein_ecran" onclick="window.location.href='https://7.quran.re';">
+      <i class="page top active">menu_book</i>
+       <div class="tooltip bottom">Moushaf Sab'ah</div>
+    </button> 
+
+	<nav class="min">
+  <button class="circle transparent">
+    <i>more_vert</i>
+  </button>
+  <menu class="bottom transparent no-wrap left right-align ">
+    <li>
+      <button class="secondary large  no-round" id="fullscreenbtn">
+        <i>fullscreen</i>
+        <span>Plein écran</span>
+      </button>
+    </li>
+	<hr class="transparent">
+    <li>
+      <button class="secondary large no-round" id="partagerBtn">
+        <i>share</i>
+        <span>Partager</span>
+      </button>
+    </li>
+	<hr class="transparent">
+    <li id="lightDarkBtn">
+	   <button class="transparent large" >
+		  <label class="switch icon">
+		  <input type="checkbox" id="lightDarkInput">
+		  <span>
+			<i>dark_mode</i>
+		  </span>
+		</label>
+	   </button>
+    </li>
+  </menu>
+</nav>
+
+    </button>
+    
+  </nav>
+</header>
+
+
+<div class="overlay blur" bis_skin_checked="1"></div>
+
+    <dialog class="left "  id="menuGlobal">
+    
+  <header class="fixed center-align">  
+    <nav class="vertical-padding" >
+              <img class="circle" src="../images/favicon.png">
+              <h6 class="max" >الـقـراءات الـسـبـع</h6>
+    </nav>
+    <span class="min center " >www.quran.re</span>  
+    <hr >
+  </header>
+  
+     <div class="space"></div>
+     
+     <ul class="list">
+       <!-- <li class="wave round" >  <a   href="https://www.quran.re/13l/sabah_aslam.html"><i>menu_book</i><span >Moushaf sab'ah</span>   <b>13L</b></a></li> -->
+       <li class="wave round" >  <a   href="https://www.quran.re/app"><i>menu_book</i><span >Moushaf intéractif</span>   <b>13L</b></a></li>
+       <li class="wave round"><a   href="https://revision.quran.re"><i>psychology</i><span>MemoQuran</span></a></li>
+       <li class="wave round"><a   href="https://drive.google.com/drive/folders/1kJqWcBBHcPlQLLpbTw52hlJUhclV3W5x?usp=drive_link"><i>download</i><span>Google Drive</span></a></li>
+     </ul>
+  
+  <hr class="small">
+       <div class="space"></div>
+       
+  <label >A propos</label> 
+  
+
+   <nav class="left max">
+            <!-- <a  href="https://bit.ly/barawpaypal" target="_blank"> -->
+              <!-- <i>volunteer_activism</i> -->
+                <!-- <span >Faire un don</span> -->
+            <!-- </a> -->
+            
+     <a  class="wave"  href="https://wa.me/262692220786?text=A%20Propos%20de%20Quran.re:%20Partie%20Qiraate%20Sabah:%20%20"><i>error</i><span>Remonter un bug</span></a>
+            <a class="wave"  href="mailto:aslamgrondin@gmail.com" target="_blank">
+              <i>contact_page</i>
+              <span >Contacter l'auteur</span>
+            </a>
+            <a class="wave"  href="https://who.is/whois/quran.re" target="_blank">
+              <i>policy</i>
+             <span >Mentions légales</span>
+            </a>
+            
+            
+            <footer class="fixed left-align">
+          <p class="small-text">©2025 - Beta 1 - 09/2025</p>
+          </footer>
+  </nav>
+</header>
+  
+
+
+
+</dialog>
+
+
+        <main class="responsive">
+        
+          <div class="tabs min " id="choixCours">
+            <a class="active " data-ui="#tabRecap">Récapitulatif</a>
+            <a data-ui="#tabIntegral" >Cours Intégral</a>
+          </div>
+          
+                  
+        <!-- affichage pour tous les tabs -->
+          <nav id="numeroDePage">
+            <button class="circle small fill " disabled>2</button>
+            <hr class="max">
+            <button class="circle small tertiary">3</button>
+            <hr class="max">
+            <button class="circle small fill" disabled>4</button>
+          </nav>
+        <div class="space"></div>
+        <!-- pour tous les tabs -->
+          
+          
+		  <!-- ------------------------ RECAP -->
+          <div class="page padding active" id="tabRecap">
+            <img id="image_tabRecap" src="../images/cours/recap/3.png" class="center pageCours" alt="page_recap" >
+            
+        <div class="space"></div>
+        
+        <details>
+         <summary><h6>Documents <i>expand_more</i></h6></summary>
+                        <ul class="list border">
+                                  <li><i>format_list_bulleted</i>
+                                  <div class="max">
+                                    <h6 class="small">PDF de ce récap</h6>
+                                    <div  class="italic">Abou Kinânah</div>
+                                  </div>
+                                    <button class="square" onclick="window.location.href='https://drive.google.com/file/d/1qgH39B-d9Ap9DcI1CmLDfjsGa69IYxL4/view?usp=drive_link';"><i>download</i></button>
+                                </li>
+                                   <li><i>table_chart</i>
+                                    <div class="max">
+                                      <h6 class="small">Tableaux récap</h6>
+                                      <div  class="italic">baraw</div>
+                                    </div>
+                                    <button class="square"  onclick="window.location.href='https://drive.google.com/file/d/13Sn4uE8hPY2uphFG0tUUcBIG3p2aKCf5/view?usp=drive_link';"><i>download</i></button>
+                                  </li>
+              
+                      </ul>
+            
+          </details>
+          </div>
+		  
+		  
+		   <!-- ------------------------ INTEGRAL -->
+          <div class="page padding" id="tabIntegral">
+            <img id="image_tabIntegral" src="../images/cours/integral/3.png" class=" center pageCours" alt="page_integrale" >
+            
+        <div class="space"></div>
+         <details>
+         <summary><h6>Documents <i>expand_more</i></h6></summary>
+                        <ul class="list border">
+                                  <li><i>library_books</i>
+                                  <div class="max">
+                                    <h6 class="small">PDF de ce cours</h6>
+                                    <div class="italic" >Abou Kinânah</div>
+                                  </div>
+                                    <button class="square" onclick="window.location.href='https://drive.google.com/file/d/1gWLpqE0zzv0tFRZRbrtKxRFuReHSE-vn/view?usp=drive_link';"><i>download</i></button>
+                                </li>
+                                   <li><i>book_2</i>
+                                    <div class="max">
+                                      <h6 class="small">Traduction de "Fawâid Mouhibiyyah"</h6>
+                                      <div class="italic">Madrassah Anass Ibn Mâlik (<a href="https://www.aim.re">aim.re</a>)</div>
+                                    </div>
+                                    <button class="square"  onclick="window.location.href='https://drive.google.com/file/d/10a9W1OtQn96hvac7RAZyniGLiomrymWz/view?usp=drive_link';"><i>download</i></button>
+                                  </li>
+              
+                      </ul>
+            
+          </details>
+          </div>
+          <!-- ------------------------ INTEGRAL -->
+        
+        </main>
+        
+        
+
+<dialog class="left" id="dialog-sommaire-tabRecap">
+  <header>
+    <nav>
+      <img class="circle large" src="../images/favicon.png">
+      <h6 class="max">Récapitulatif</h6>
+      <!-- <button class="transparent circle large">        <i>close</i>      </button> -->
+    </nav>
+  </header>
+  <div class="space"></div>
+  
+  <ul class="list sommaire">
+  <li>
+    <span class="max">Les 7 Imâm de Qirâât et leurs élèves</span>
+  <b>4</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">La Basmalah entre deux sourates</span>
+  <b>5</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Le Mim du pluriel</span>
+  <b>6</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Le Idghâm Kabîr</span>
+  <b>7</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Le Hâ Kinâyah</span>
+  <b>8</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Les différents Madd</span>
+  <b>9</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">2 Hamza dans le même mot</span>
+  <b>10</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">2 Hamza aux mêmes voyelles dans 2 mots différents</span>
+  <b>11</b>
+</li>
+<li class="wave round">
+  
+  <span class="max"><i class="yellow-text" >subdirectory_arrow_right</i> Deux Hamza: Maftoûh</span>
+  <b>12</b>
+</li>
+<li class="wave round">
+  
+  <span class="max"><i class="yellow-text" >subdirectory_arrow_right</i>  Deux Hamza: Madhmoûm</span>
+  <b>13</b>
+</li>
+<li class="wave round">
+  
+  <span class="max"><i class="yellow-text" >subdirectory_arrow_right</i>  Deux Hamza: Maksoûr</span>
+  <b>14</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">2 Hamza aux voyelles contraires dans 2 mots différents</span>
+  <b>15</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Hamza Sâkin (Ibdâl) / Hamza Maftoûh (Ibdâl)</span>
+  <b>16</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Mafsoûl ‘Am & Mafsoûl Khas</span>
+  <b>17</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Le Râ à bouche vide</span>
+  <b>18</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Le Lâm à bouche pleine</span>
+  <b>19</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Idghâm Tâm</span>
+  <b>19</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Tarbi’</span>
+  <b>20</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Le Waqf de l'Imâm Hamza et de l'Imâm Hichâm</span>
+  <b>21</b>
+</li>
+<li class="wave round">
+  
+  <span class="max"></span>
+  <b></b>
+</li>
+</ul>
+
+
+</dialog>
+
+
+<dialog class="right" id="dialog-sommaire-tabIntegral">
+  <header>
+    <nav>
+      <img class="circle large" src="../images/favicon.png">
+      <h6 class="max">Cours intégral</h6>
+      <!-- <button class="transparent circle large">        <i>close</i>      </button> -->
+    </nav>
+  </header>
+  <div class="space"></div>
+  
+  <ul class="list sommaire">
+  <li>
+     <span class="max">Les 7 Imâm de Qirâât et leurs élèves</span>
+  <b>6</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">La Basmalah entre deux sourates</span>
+  <b>7</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Le Mim du pluriel</span>
+  <b>9</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Le Idghâm Kabîr</span>
+  <b>11</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Le Hâ Kinâyah</span>
+  <b>13</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Les différents Madd</span>
+  <b>14</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">2 Hamza dans le même mot</span>
+  <b>17</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">2 Hamza aux mêmes voyelles dans 2 mots différents</span>
+  <b>18</b>
+</li>
+<li class="wave round">
+  
+  <span class="max"><i class="yellow-text">subdirectory_arrow_right</i> Deux Hamza: Maftoûh</span>
+  <b>20</b>
+</li>
+<li class="wave round">
+  
+  <span class="max"><i class="yellow-text">subdirectory_arrow_right</i> Deux Hamza: Madhmoûm</span>
+  <b>21</b>
+</li>
+<li class="wave round">
+  
+  <span class="max"><i class="yellow-text">subdirectory_arrow_right</i> Deux Hamza: Maksoûr</span>
+  <b>22</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">2 Hamza aux voyelles contraires dans 2 mots différents</span>
+  <b>24</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Hamza Sâkin (Ibdâl) / Hamza Maftoûh (Ibdâl)</span>
+  <b>26</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Mafsoûl ‘Am & Mafsoûl Khas</span>
+  <b>27</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Le Râ à bouche vide</span>
+  <b>29</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Le Lâm à bouche pleine</span>
+  <b>30</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Idghâm Tâm</span>
+  <b>30</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Imâlah</span>
+  <b>31</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Le Yâ Moutakallim</span>
+  <b>36</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Le Yâ Zâida</span>
+  <b>36</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Les Waqf particuliers</span>
+  <b>37</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Tarbi’</span>
+  <b>38</b>
+</li>
+<li class="wave round">
+  
+  <span class="max">Le Waqf de l'Imâm Hamza et de l'Imâm Hichâm</span>
+  <b>39</b>
+</li>
+<li class="wave round">
+  
+  <span class="max"></span>
+</li>
+
+</ul>
+
+
+</dialog>
+
+<nav class="bottom large-space">
+  <a onclick="changePage('precedent')" >
+    <i>arrow_back</i>
+    <div>Précédent</div>
+  </a>
+  <a data-ui="#dialog-sommaire-tabRecap" id="boutonSommaire">
+    <i>list</i>
+    <div>Sommaire</div>
+  </a>
+  <a onclick="changePage('suivant')" >
+    <i>arrow_forward</i>
+    <div>Suivant</div>
+  </a>
+</nav>
+
+
+
+<div class="snackbar tertiary top" id="snackbar">
+  <i>info</i>
+  <span></span>
+</div>
+
+
+</body>
+</html>

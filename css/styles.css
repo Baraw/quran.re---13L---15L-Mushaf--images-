@@ -1,0 +1,325 @@
+/**
+  COMMUN A 13 LIGNES, 15 LIGNES, 1 PAGE et 2 PAGES (cad tout)
+
+ */
+
+html, body {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+ .mdl-layout__header-row {
+  padding-left: 40px;
+}
+ .mdl-layout.is-small-screen .mdl-layout__header-row h3 {
+  font-size: inherit;
+}
+ .mdl-layout__tab-bar-button {
+  display: none;
+}
+ .mdl-layout.is-small-screen .mdl-layout__tab-bar .mdl-button {
+  display: none;
+}
+ .mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar,
+ .mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar-container {
+  overflow: visible;
+}
+.mdl-layout__tab-bar-container {
+  height: 64px;
+}
+ .mdl-layout__tab-bar {
+  padding: 0;
+  padding-left: 50px !important;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+ .mdl-layout__tab-bar .mdl-layout__tab {
+  height: 64px;
+  line-height: 64px;
+}
+ .mdl-layout__tab-bar .mdl-layout__tab.is-active::after {
+  background-color: white;
+  height: 4px;
+}
+
+  .material-symbols-outlined 
+  {
+            vertical-align: middle;
+  }
+  
+ /* main { */
+  /* padding-top: 20px; */
+/* } */
+
+  .mdl-navigation__link:hover {
+    
+      background-color:#333;
+  }
+ section > header{
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+
+  .active   {         font-weight: bold;         border-left: solid grey medium;      filter: sepia(0.5);   }
+  .mdl-layout__drawer  .active {       background-color: white;   }
+/* MES MODIFICATIONS  */
+select {
+
+  /* // Additional resets for further consistency */
+  background-color: #fdfdfd;
+  border: none;
+  padding: 1em 1em 1em 1em;
+  /* margin: 0; */
+  /* width: 100%; */
+  max-width:300px;
+  font-family: inherit;
+  font-size: inherit;
+  /* cursor: inherit; */
+  /* line-height: inherit; */
+  margin-top: 10px;
+  height:50px;
+  
+}
+
+ #qirat_disclaimer { padding-inline: 10%; text-align:justify;   }
+
+  #boutonPRECEDENT
+  {
+                    background-color: #da5d5d;
+					float: right;
+					position: relative;
+					color:white;
+  }
+
+   #vitesseAudio {
+          width:150px;
+         display:inline-block;
+         color:green;
+         /* font-size: small;    */
+         vertical-align: -webkit-baseline-middle;
+    }
+    
+    #selectAUDIO {   max-width:130px; }
+    select option:checked { font-style: italic; }
+    #paramAudio    {     display:inline-block;  }
+
+
+  /* *************************************************** */
+
+@media only screen and (max-width: 600px) 
+  {
+       select                    {             max-width:130px; /* avant 210 */         }
+       
+       #selectAUDIO     {   max-width:110px;    }
+       #selectQari          {   max-width: 185px;   }
+       
+       #vitesseAudio     {         width:140px;                                   }
+       #selectQUART    {        max-width: 100px;                            }
+       #paramAudio      {       margin-top: 15px;   display:block;  }
+  }
+    
+@media ony screen and (min-width: 768px)
+{
+    #parametres .material-icons        {         font-size: 29px;        }
+        
+    .active {   border-block-width: medium; border-left:none;}
+       
+}
+
+ select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* -------------- MES AJOUTS -& MODIFS ----------- */
+  #selectPAGE
+    {   border:revert;   text-align: center;  max-width:50px;       padding: 5px;
+    font-size: large; }
+    
+
+/* TITRE */
+.mdl-layout__title, .mdl-layout-title {
+margin-left: 40px;
+}
+
+.mdl-layout__drawer-button {
+    /* margin-inline: 8px; */
+    color: #1844b7;
+    background: #ffffff80;
+    line-height:45px;
+}
+
+
+.mdl-layout__header
+ {
+      /* background-color:#1844b7; */
+          filter: hue-rotate(5deg);
+}
+
+/* ICONES MATERIAL DESIGN */
+.material-icons
+{
+      vertical-align: middle;
+}
+
+/* CHARGEMENT */
+    .mdl-spinner 
+    {
+      /* display: inline-flex; */
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      left: 30%;
+      top  : 25%;
+      /* transform: translateX(-50%); */
+    }
+    
+    .mdl-chip {     vertical-align: middle;     } /* centrer le bouton ecouter */
+    .mdl-chip--contact{        background-color: #ffffffd4;     } /* centrer le bouton ecouter */
+    
+    /* *********************************************************** */
+    .nonvisiblemaispresent  {       visibility: hidden;     }
+    
+    #parametres
+    {
+          /* background-color: #8ddee8; */
+          padding: 10px;
+          text-align: center;
+          z-index: 20; /* Pour ne pas que l'image passe au dessus de lui */
+          position: inherit;
+          
+    }
+        #parametres a 
+        {
+                text-decoration: none;
+                color: black;
+                padding-inline: 15px;
+        }
+      
+        #options {      position: relative;    float: right;    }
+        
+    #selectSOURATE
+	{
+			color: darkgreen; /*darkolivegreen */
+                background-color: #d7f1d7;
+	}
+	
+	#selectSIPARAH
+	{
+			color: darkblue;
+            background-color: #dceff7;
+			/* text-align: center; */
+	}
+	
+	#selectQUART {		color: darkred; background-color: #dceff7;	}
+    
+    #selectQari, #selectAUDIO 
+    {    
+      background-color:#ffffff7a; padding: 0.5em;  
+      border-radius: 10px;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+    }
+    #nbVitesseLecture {font-weight:bold;}
+    
+    /* .boutonFlottant  {  position: flex; } */
+    
+    .switchParam {     margin-right: 0.5em;
+    color: initial;
+    /* font-weight: 500; */
+    vertical-align: text-top;
+    font-size: smaller;     }
+    
+    	
+	@media only screen and (min-width: 1359px) 
+	{	/* For desktop: */
+          
+           #parametres    {     margin-left:20%;    margin-right:20%;    
+           /* padding: 2px;  */
+           }
+           #parametres a 
+           {
+                padding-inline: 40px;
+          }
+           #parametres .material-icons
+        {
+         font-size: 20px;
+        }
+        #parametres .mdl-button, #parametres .switchParam
+           {
+         font-size: smaller;
+        }
+        
+              .active {   border-block-width: medium; border-block-style: groove; border-left:none;  background-color:#ffffff1f;   }
+    }
+    
+    @keyframes fondu
+    {
+       
+        0%   {  opacity: 0.1;  filter: drop-shadow(1px 1px 1px grey);}
+        /* 25%  {background-color: yellow;} */
+        50%  { opacity: 0.5; filter: drop-shadow(2px 2px 2px grey);}   
+        70%  { opacity: 0.7; }
+        100% {opacity: 1; /*filter: drop-shadow(3px 2px 6px grey);*/}
+
+
+    }
+    
+      /* Animation de l'ombre */
+  @keyframes shadow-animation-droite 
+  {
+    0% {
+      box-shadow: inset -20px 0px 20px 0px rgba(0, 0, 0, 0);
+    }
+    50% {
+      box-shadow: inset -7px 0px 7px 0px rgba(0, 0, 0, 0.35), inset -14px 0px 13px 0 rgba(0, 0, 0, 0.25);
+    }
+    100% {
+      box-shadow: inset -7px 0px 7px 0px rgba(0, 0, 0, 0.35), inset -14px 0px 13px 0 rgba(0, 0, 0, 0.25);
+    }
+  }  
+  
+  @keyframes shadow-animation-gauche 
+  {
+    0% {
+      box-shadow: inset 20px 0px 20px 0px rgba(0, 0, 0, 0);
+    }
+    50% {
+      box-shadow: inset 7px 0px 7px 0px rgba(0, 0, 0, 0.35), inset 14px 0px 13px 0 rgba(0, 0, 0, 0.25);
+    }
+    100% {
+      box-shadow: inset 7px 0px 7px 0px rgba(0, 0, 0, 0.35), inset 14px 0px 13px 0 rgba(0, 0, 0, 0.25);
+    }
+  }
+
+    .fondu {     animation: fondu ease-in-out 0.1s ;  }
+    
+  
+    .mdl-chip:active
+    {
+      background-color:white;
+          border: 3px solid greenyellow;
+    }
+    
+   .modeNuitJour{ filter: invert(1);  }
+   .modeNuitPageCouleur{ filter: hue-rotate(180deg); }
+   .black{ background-color:black !important; }
+   .blanc{ background-color:white !important; }
+   .texteblanc{ color:white !important; }
+   
+   
+   /* Nouveaux ajouts */
+   #lesboutonsavantapres
+   {
+        display: contents;
+   }
+   
+/* -------------- fin MES AJOUTS ------------ */

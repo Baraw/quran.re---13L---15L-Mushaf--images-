@@ -1,0 +1,73 @@
+<!doctype html>
+<!--
+
+-->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Qouran">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.png">
+	<script src="js/affichage.js"></script>
+<style>
+#wrapper {
+    width: 70%;
+    margin: 0 auto;
+	max-height:600px;
+	margin-top:5%;
+    margin-bottom:20px;
+}
+
+body { 
+	    height: 90vh;
+background-image: linear-gradient(to left top, #0000ff, #006bff, #007bcc, #00805f, #008000);
+color:white ; font-family:Tahoma;
+
+}
+img {          margin: auto;
+display:block;
+    //margin-block: -40px;
+    }
+    
+#wrapper a { color:white ;    font-size: 2.5em; text-decoration:none;	}
+
+.block 
+{
+display: inline-block; vertical-align: middle;padding:20px;
+}
+
+.block:hover
+{
+    border: solid white 3px;
+}
+</style>
+
+    <title>Moushaf 13L & 15 L</title>
+	
+</head>
+<body>
+
+<div id='wrapper' style='text-align: center;'>
+<h1><script> document.write(languesStock[langChoisie].index);</script></h1>
+
+<a href="13l" >
+    <div class="block" style='background-color:blue;'>
+    <img src="images/favicon13.png" alt="13l">
+   <script> document.write(languesStock[langChoisie].typeMoushaf['13']);</script>
+</a><br/>
+    </div>
+    
+<a href="15l">
+    <div class="block" style='background-color:green;'>
+    <img src="images/favicon15.png" alt="15l">
+   <script> document.write(languesStock[langChoisie].typeMoushaf['15']);</script>
+ </a>  <br>
+    </div>
+
+</div> 
+    <footer style="text-align:center;">
+    www.quran.re - <a href="https://bit.ly/m/baraw">Contact</a>
+    </footer>
+</body>
+</html>

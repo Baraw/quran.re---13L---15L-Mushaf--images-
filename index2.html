@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta http-equiv="refresh" content="0;url=https://mufradat.fr/quran/app">
+    <title>Quran.re {Redirection...}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cercle de chargement infini</title>
+    <style>
+        /* Centrage de la page */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        /* Style du cercle */
+        .loader {
+            border: 16px solid #f3f3f3; /* Couleur de l'arrière-plan */
+            border-top: 16px solid #3498db; /* Couleur de l'anneau de chargement */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite; /* Animation infinie */
+        }
+
+        /* Animation de rotation du cercle */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div> <!-- Cercle de chargement -->
+</body>
+</html>

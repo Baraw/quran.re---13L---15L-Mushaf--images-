@@ -1,0 +1,234 @@
+	  #landscapeIcon {
+    position:absolute;
+	top:50%;
+	left:50%;
+	/* right:50%; */
+	transform: translate(-50%, -50%);
+  }
+  #landscapeIcon > span {
+	  
+	font-size:250px;
+	color:brown;
+  }
+  @media screen and (orientation: landscape) {
+    #landscapeIcon {
+      display: none;
+    }
+  }  
+  
+  @media screen and (orientation: portrait) 
+  {
+   .mdl-layout__content {
+      display: none;
+    }
+  }
+	
+	 @media screen and (max-width: 768px) 
+	 {
+   
+			#boutonInvisibleGauche, #boutonInvisibleDroit
+			{   	
+					height:110%;
+			}
+	 } 
+ 
+	/* SUR MOBILE NON, PC SEULEMENT */
+	#pagSuiv, #pagPrec
+	{ display: none; }
+	
+	/* SUR MOBILE DIFFERENT CSS, CAD :*/
+	#boutonInvisibleGauche, #boutonInvisibleDroit
+	{   	 width: 15%;
+			position: absolute;
+			height:120%;
+			z-index:1;
+	}
+	#pagSuiv
+	{ 
+		left:28%;
+	}
+	#boutonInvisibleGauche
+	{ 
+		left:0%;
+	}
+	#pagPrec, #boutonInvisibleDroit
+	{
+		right:0%;
+	}
+	
+		#parametres	
+	{
+            box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+	}
+	
+	#moushafdouble
+	{
+			position:relative;
+			margin-inline:-1px;
+			/* display: flex; */
+					/* justify-content: center; */
+					/* justify-content: space-between; */
+					/* align-items: center; */
+		
+			/* max-width:500px; */
+			/* margin-top:-30px; */
+	}
+
+
+	#moushafdouble::before
+	{
+			 content: "";
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  width: 100%;
+			  height: 100%;
+		       box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.3);
+	}
+	
+	#pageAffichee2::before,#pageAffichee::after {
+	  content: "";
+	  position: absolute;
+	  top: 0;
+	  width: 50%;
+	  height: 100%;
+	  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* ombre avec couleur rgba */
+	}
+	
+
+	#pageAffichee2::before {
+	  /* left: 0; */
+	  /* transform: skewY(-10deg); /* incliner l'ombre vers la droite */ */
+	}
+
+	#pageAffichee::after {
+	  /* right: 0; */
+	  /* transform: skewY(10deg); /* incliner l'ombre vers la gauche */ */
+	}
+	
+	.shadow {
+	    position: absolute;
+    top: 0;
+    bottom: 0;
+	width: 1px;
+    /* background-color: rgb(0 0 0 / 20%); */
+    left: 50%;
+    box-shadow: 
+								inset 0px 1px 0px 1px rgb(0 0 0 / 40%), /* au centre */
+								-3px 0px 7px rgb(0 0 0 / 90%),
+								-10px 0px 15px rgb(0 0 0 / 70%),
+								3px 0px 7px rgb(0 0 0 / 90%), 
+								10px 0px 15px rgb(0 0 0 / 70%);
+}}
+	
+	    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+	
+	.zoomIcon {
+
+	    color: darkmagenta;
+    border-radius: 50%;
+    /* background-color: #7e7e7e3b; */
+    padding: 3px;
+    border-block: dashed grey thin;
+	    margin-inline: 2em;
+	}
+	
+	.imagePAYSAGE
+	{
+			width:48.5%; /* c est ce qui donne l'effet del ivre, de pages */
+	}
+	
+	#selectSOURATE
+	{
+			margin-bottom:10px;
+			margin-top: 10px;
+	}
+	
+	#selectSIPARAH
+	{
+			/* float:right; */
+			width:20%;
+			margin-left: 20px;
+			/* margin-top:80px; */
+	}
+
+	
+	.mdl-menu__container {	    top: 99%;	}
+	
+		@media only screen and (orientation: landscape) 
+	{
+			
+			
+			#moushafdouble
+			{
+				width:90%;
+			}
+			
+			#boutonPRECEDENT, #boutonSUIVANT
+			{
+				width:90px;
+			    height: 50px;
+				margin-top: -20px;
+			}
+	
+			#boutonPRECEDENT
+			{
+					margin-right:-1%;
+					
+			}
+			
+			#boutonSUIVANT
+			{
+					margin-left:-1%;
+					float:left;
+					background-color:deepskyblue;
+					color:white;
+			}
+	
+	
+}
+	@media only screen and (min-width: 1080px) 
+	{
+		#boutonInvisibleGauche, #boutonInvisibleDroit
+	{   
+			height:85%;
+			width:20%;
+	}
+		
+		#moushafdouble
+			{
+				width:60%;
+			}
+			
+		#boutonPRECEDENT,#boutonSUIVANT
+	{
+			display:none;
+	}
+			#pagSuiv, #pagPrec
+		{
+			margin-top:60px;
+			height: 60%;
+			width: 20%;
+			position: absolute;
+			display: inline;
+			z-index: 3;
+		}
+
+		#pagPrec
+		{
+			margin-left: 620px;
+		}
+		#pagSuiv
+		{
+			margin-left: -315px;
+		}
+		
+	}

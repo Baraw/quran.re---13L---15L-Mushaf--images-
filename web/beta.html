@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr" dir="rtl" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mushaf 13 lignes — mot à mot</title>
+<style>
+  /* ============ POLICES ============
+     Piles avec repli. Installe la 1re de chaque pile pour le rendu optimal :
+     - Indopak   : "Al Qalam Quran Majeed" / "PDMS_Saleem_QuranFont" / "Noto Naskh Arabic"
+     - Uthmani   : "KFGQPC Uthmanic Script HAFS" / "me_quran" / "Amiri Quran"
+     - Nastaleeq : "AlQuran IndoPak by QuranWBW    */
+     
+  @font-face{font-family:"fallbackArabic";src:local("Traditional Arabic"),local("Amiri"),local("Scheherazade New")}
+  @font-face {
+    font-family: "AlQuran IndoPak by QuranWBW";
+    src: url("../data/polices/AlQuran-IndoPak-by-QuranWBW.v.4.2.2.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+  :root{
+    --bg:#e7ddc7; --sheet1:#f6f0e2; --sheet2:#efe7d4; --ink:#211d17;
+    --rule:#d9ccae; --gold:#a9852f; --accent:#3f6f5f; --marker:#9a7b2e;
+    --hover:#e8dcc0; --pause:#9c8a63; --panel:#fbf7ec; --bar:#2c2820;
+    --bar-ink:#f6f0e2; --bar-btn:#3a352b; --bar-btn-h:#4a4437; --bar-border:#5a5344;
+    --cell:#ffffff; --shadow:rgba(33,29,23,.12); --sel-ink:#f6f0e2;
+  }
+  html[data-theme="dark"]{
+    --bg:#14120e; --sheet1:#20242a; --sheet2:#191c21; --ink:#e9e2d0;
+    --rule:#3a3f47; --gold:#d0a84e; --accent:#6fae97;
+    --marker:#c9a75a; --hover:#2c313a; --pause:#9a8f74; --panel:#1b1e23; --bar:#0e0d0a;
+    --bar-ink:#e9e2d0; --bar-btn:#242830; --bar-btn-h:#30353f; --bar-border:#3a3f47;
+    --cell:#242830; --shadow:rgba(0,0,0,.4); --sel-ink:#14120e;
+  }
+  html[data-theme="sepia"]{
+    --bg:#d8c7a0; --sheet1:#f3e9cf; --sheet2:#ece0c0; --ink:#3a2f1c;
+    --rule:#cbb488; --gold:#8a6a1f; --accent:#4a6b4a; --marker:#8a6a1f;
+    --hover:#e4d4ab; --pause:#8a7a55; --panel:#f6eed6; --bar:#3a2f1c;
+    --bar-ink:#f3e9cf; --bar-btn:#4a3d26; --bar-btn-h:#5a4c33; --bar-border:#6a5a3d;
+    --cell:#fbf5e4; --shadow:rgba(58,47,28,.16); --sel-ink:#f3e9cf;
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Segoe UI",system-ui,sans-serif;
+    padding-bottom:5.2rem;transition:background .3s,color .3s}
+
+  /* Feuillet mushaf */
+  .sheet{max-width:640px;margin:1.6rem auto;padding:2.2rem 2rem 2.6rem;
+    background:linear-gradient(180deg,var(--sheet1),var(--sheet2));
+    border:1px solid var(--rule);border-radius:4px;
+    box-shadow:0 6px 26px var(--shadow),inset 0 0 0 6px rgba(169,133,47,.06);
+    
+    margin-block: 3rem;
+    }
+
+  /* Ligne justifiée : espace-between étire les mots bord à bord */
+  .line{display:flex;justify-content:space-between;align-items:baseline;
+    padding:.2em .1em;min-height:2.3em;gap:.15em}
+  .line.one-word{justify-content:center}      /* 1 seul mot : centré, pas étiré */
+  .line:hover{background:rgba(169,133,47,.05)}
+
+  .surah-header{justify-content:center;margin:.35em auto;padding:.35em 1.2em;
+    background:rgba(169,133,47,.14);border:1px solid var(--rule);border-radius:40px;
+    font-size:1.5rem;color:var(--gold);font-weight:600;max-width:75%}
+  .basmala{justify-content:center;font-size:1.7rem;color:var(--ink);padding:.35em}
+
+  .w{padding:.02em .1em;border-radius:5px;cursor:pointer;
+    transition:background .12s,color .12s;white-space:nowrap;line-height:1.85}
+  /* Polices par mode d'affichage */
+  .mode-indopak .w{font-family:"Al Qalam Quran Majeed","PDMS_Saleem_QuranFont","Noto Naskh Arabic","fallbackArabic",serif;font-size:2rem}
+  .mode-uthmani .w{font-family:"KFGQPC Uthmanic Script HAFS","me_quran","Amiri Quran","fallbackArabic",serif;font-size:2rem}
+  .mode-nastaleeq .w{font-family:"AlQuran IndoPak by QuranWBW",serif;font-size:1.9rem; /* line-height:2.6 */ }
+  .w:hover{background:var(--hover)}
+  .w.sel{background:var(--accent);color:var(--sel-ink)}
+  .w.marker{color:var(--marker);cursor:default}
+  .w.marker:hover{background:transparent}
+  .w.pause{color:var(--pause);cursor:default}
+  .w.pause:hover{background:transparent}
+
+  /* ====== Barre de navigation EN BAS ====== */
+  .navbar{position:fixed;inset-inline:0;z-index:20;
+    display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:center;
+    padding:.6rem .9rem;background:var(--bar);color:var(--bar-ink);
+    box-shadow:0 -2px 12px var(--shadow)}
+    .navbar.top {
+    top:0;
+    }
+    .navbar.bottom {
+    bottom:0;
+    padding-bottom: 1rem;
+    }
+    
+  .navbar button,.navbar select{font:inherit;font-size:.82rem;padding:.34rem .66rem;
+    border:1px solid var(--bar-border);border-radius:6px;
+    background:var(--bar-btn);color:var(--bar-ink);cursor:pointer}
+  .navbar button:hover,.navbar select:hover{background:var(--bar-btn-h)}
+  .navbar .seg{display:inline-flex;border:1px solid var(--bar-border);border-radius:6px;overflow:hidden}
+  .navbar .seg button{border:0;border-radius:0;border-inline-start:1px solid var(--bar-border)}
+  .navbar .seg button:first-child{border-inline-start:0}
+  .navbar .seg button.on{background:var(--gold);color:#211d17;font-weight:600}
+  .pageno{min-width:3rem;text-align:center;font-weight:600;cursor:pointer;
+    padding:.34rem .5rem;border-radius:6px;background:var(--bar-btn);
+    border:1px solid var(--bar-border)}
+  .pageno:hover{background:var(--bar-btn-h)}
+  .spacer{flex-basis:100%;height:0}
+
+  /* Panneau d'info */
+  .panel{position:fixed;inset-inline:0;bottom:0;z-index:30;
+    max-height:0;overflow:hidden;background:var(--panel);
+    border-top:3px solid var(--gold);box-shadow:0 -6px 26px var(--shadow);
+    transition:max-height .28s ease}
+  .panel.open{max-height:60vh;overflow:auto}
+  .panel .inner{max-width:640px;margin:0 auto;padding:1.1rem 1.4rem 1.4rem}
+  .panel .head{display:flex;align-items:baseline;gap:1rem;justify-content:space-between;
+    border-bottom:1px solid var(--rule);padding-bottom:.6rem;margin-bottom:.85rem}
+  .panel .word-big{font-family:"KFGQPC Uthmanic Script HAFS","Amiri Quran","fallbackArabic",serif;
+    font-size:2.5rem;color:var(--ink)}
+  .panel .loc{font-size:.78rem;color:var(--pause);font-family:ui-monospace,monospace;direction:ltr}
+  .panel .close{border:0;background:none;font-size:1.4rem;cursor:pointer;color:var(--pause)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.85rem}
+  .cell{background:var(--cell);border:1px solid var(--rule);border-radius:8px;padding:.65rem .8rem}
+  .cell .k{font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--pause);margin-bottom:.25em}
+  .cell .v{font-size:1.05rem}
+  .cell .v.ar{font-family:"Amiri","fallbackArabic",serif;font-size:1.4rem}
+  .cell.fr .v{direction:ltr;text-align:left}
+
+  .loading{text-align:center;padding:3rem;color:var(--pause)}
+  
+  #next, #prev {   padding-inline:1rem; margin-inline:2rem;}
+
+  @media(max-width:600px){
+    .mode-indopak .w,.mode-uthmani .w{font-size:1rem}
+    .mode-nastaleeq .w{font-size:1.1rem}
+    .sheet{padding:1.3rem 2rem;margin:.8rem auto;
+        margin-top: 3rem;
+        
+        max-width: fit-content;}
+    .navbar{gap:.35rem;padding:.5rem}
+    .navbar button,.navbar select{font-size:.75rem;padding:.3rem .5rem}
+  }
+</style>
+</head>
+<body class="mode-indopak">
+
+<div class="sheet" id="sheet"><div class="loading">Chargement…</div></div>
+
+<!-- Panneau d'info (au-dessus de la navbar quand ouvert) -->
+<div class="panel" id="panel"><div class="inner">
+  <div class="head">
+    <span class="word-big" id="pWord"></span>
+    <span class="loc" id="pLoc"></span>
+    <button class="close" id="pClose">✕</button>
+  </div>
+  <div class="grid" id="pGrid"></div>
+</div></div>
+
+<!-- ====== Barre de navigation EN BAS ====== -->
+<div class="navbar bottom">
+  <select id="juzSel" title="Aller à un djouz"></select>
+  <select id="surahSel" title="Aller à une sourate"></select>
+  <div class="spacer"></div>
+  <!-- Précédent/Suivant inversés : en RTL, "précédent" = page numériquement inférieure -->
+  <button id="prev">▶  </button>
+  <span class="pageno" id="pageno" title="Cliquer pour saisir une page">—</span>
+  <button id="next">  ◀</button>
+</div>
+
+<div class="navbar top">
+  <div class="seg" title="Script d'affichage">
+    <button data-script="indopak" >Indopak</button>
+    <button data-script="uthmani">Uthmani</button>
+    <button data-script="nastaleeq" class="on">Nastaleeq</button>
+  </div>
+  <div class="seg" title="Thème">
+    <button data-theme="light" class="on">☀️</button>
+    <button data-theme="sepia">📜</button>
+    <button data-theme="dark">🌙</button>
+  </div>
+</div>
+
+<script>
+const BASE = "pages/";
+let INDEX=null, script="indopak", curPage=2, PMIN=2, PMAX=848;
+const $ = s => document.querySelector(s);
+const scriptField = { indopak:"t", uthmani:"uth", nastaleeq:"nas" };
+
+async function loadIndex(){
+  INDEX = await (await fetch("index.json")).json();
+  PMIN = INDEX.pages[0]; PMAX = INDEX.pages[INDEX.pages.length-1];
+  $("#surahSel").innerHTML = '<option value="">— Sourate —</option>' +
+    INDEX.surahs.map(s=>`<option value="${s.page}">${s.n}. ${s.name||""}</option>`).join("");
+  $("#juzSel").innerHTML = '<option value="">— Djouz —</option>' +
+    (INDEX.juz||[]).map(j=>`<option value="${j.page}">Juz' ${j.n}</option>`).join("");
+  $("#surahSel").onchange = e => e.target.value && goto(+e.target.value);
+  $("#juzSel").onchange   = e => e.target.value && goto(+e.target.value);
+}
+
+async function goto(p){
+  p = Math.max(PMIN, Math.min(PMAX, p));
+  curPage = p; $("#pageno").textContent = p;
+  try{
+    const data = await (await fetch(`${BASE}page_${p}.json`)).json();
+    render(data);
+  }catch(e){
+    $("#sheet").innerHTML = `<div class="loading">Page ${p} introuvable.</div>`;
+  }
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function render(data){
+  const sheet = $("#sheet"); sheet.innerHTML = "";
+  for(const line of data.lines){
+    const types = new Set(line.map(t=>t.ty));
+    if([...types].every(t=>t==="header"||t==="surah_header")){
+      const d=document.createElement("div"); d.className="line surah-header one-word";
+      d.textContent=line.map(t=>t.t).join(" "); sheet.appendChild(d); continue;
+    }
+    if([...types].every(t=>t==="basmala")){
+      const d=document.createElement("div"); d.className="line basmala one-word";
+      d.textContent=line.map(t=>t.t).join(" "); sheet.appendChild(d); continue;
+    }
+    const row=document.createElement("div");
+    row.className = "line" + (line.length===1 ? " one-word" : "");
+    for(const tok of line){
+      const el=document.createElement("span");
+      if(tok.ty==="ayah_marker"){ el.className="w marker"; el.textContent=tok.t; }
+      else if(tok.ty==="pause_mark"){ el.className="w pause"; el.textContent=tok.t; }
+      else{
+        el.className="w";
+        el.textContent = (script==="indopak") ? tok.t : (tok[scriptField[script]]||tok.t);
+        if(tok.loc){ el.dataset.loc=tok.loc; el.onclick=()=>select(el,tok); }
+      }
+      row.appendChild(el);
+    }
+    sheet.appendChild(row);
+  }
+}
+
+function select(el,tok){
+  document.querySelectorAll(".w.sel").forEach(x=>x.classList.remove("sel"));
+  el.classList.add("sel");
+  $("#pWord").textContent = tok.uth || tok.t;
+  $("#pLoc").textContent = tok.loc;
+  const cells=[];
+  // On n'affiche PAS Indopak/Uthmani/Nastaleeq ici (déjà visibles sur la page)
+  if(tok.fr) cells.push(`<div class="cell fr"><div class="k">Traduction</div><div class="v">${tok.fr}</div></div>`);
+  if(tok.root) cells.push(`<div class="cell"><div class="k">Racine</div><div class="v ar">${tok.root}${tok.rootTr?` &nbsp;<span style="font-family:ui-monospace;font-size:.85rem">${tok.rootTr}</span>`:""}</div></div>`);
+  if(tok.stem) cells.push(`<div class="cell"><div class="k">Radical</div><div class="v ar">${tok.stem}</div></div>`);
+  if(tok.pos) cells.push(`<div class="cell"><div class="k">Morphologie</div><div class="v" style="font-size:.9rem;direction:ltr">${tok.pos}</div></div>`);
+  if(tok.irab) cells.push(`<div class="cell"><div class="k">I'râb</div><div class="v ar" style="font-size:1.1rem">${tok.irab}</div></div>`);
+  $("#pGrid").innerHTML = cells.join("") || '<div class="cell"><div class="v" style="color:var(--pause)">Pas de données lexicales pour ce mot.</div></div>';
+  $("#panel").classList.add("open");
+}
+
+$("#pClose").onclick=()=>{ $("#panel").classList.remove("open");
+  document.querySelectorAll(".w.sel").forEach(x=>x.classList.remove("sel")); };
+
+// Précédent = page-1, Suivant = page+1 (numérotation croissante)
+$("#prev").onclick=()=>goto(curPage-1);
+$("#next").onclick=()=>goto(curPage+1);
+
+// Clic sur le n° de page -> saisie
+$("#pageno").onclick=()=>{
+  const v = prompt(`Aller à la page (${PMIN}–${PMAX}) :`, curPage);
+  if(v && !isNaN(+v)) goto(+v);
+};
+
+// Script
+document.querySelectorAll(".seg [data-script]").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".seg [data-script]").forEach(x=>x.classList.remove("on"));
+  b.classList.add("on"); script=b.dataset.script;
+  document.body.className = "mode-"+script;
+  goto(curPage);
+});
+// Thème
+document.querySelectorAll(".seg [data-theme]").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".seg [data-theme]").forEach(x=>x.classList.remove("on"));
+  b.classList.add("on");
+  document.documentElement.setAttribute("data-theme", b.dataset.theme);
+});
+
+// Clavier : en RTL la flèche gauche = suivant visuellement, mais on suit la numérotation
+document.addEventListener("keydown",e=>{
+  if(e.key==="ArrowLeft") goto(curPage+1);
+  if(e.key==="ArrowRight") goto(curPage-1);
+});
+
+(async()=>{ await loadIndex(); await goto(2); })();
+</script>
+</body>
+</html>

@@ -1,0 +1,592 @@
+{
+   "maxOnglet":9,
+   "mushafTypes":{
+      "13l":{
+         "pageMax":849,
+         "pageMin":2,
+         "extension":"jpg"
+      },
+      "13lcolored":{
+         "pageMax":851,
+         "pageMin":2,
+         "extension":"png"
+      },
+      "13lenglish":{
+         "pageMax":853,
+         "pageMin":1,
+         "extension":"png"
+      },
+      "13lsabah":{
+         "pageMax":850,
+         "pageMin":2,
+         "extension":"png"
+      },
+      "13lsabah_aim":{
+         "pageMax":848,
+         "pageMin":3,
+         "extension":"jpg"
+      },
+      "13ltrois":{
+         "pageMax":852,
+         "pageMin":2,
+         "extension":"png"
+      },
+      "13lvert":{
+         "pageMax":849,
+         "pageMin":2,
+         "extension":"png"
+      },
+      "13lQC":{
+         "pageMax":849,
+         "pageMin":2,
+         "extension":"png"
+      },
+      "15l":{
+         "pageMax":850,
+         "pageMin":2,
+         "extension":"jpg"
+      },
+      "15ltadjwid":{
+         "pageMax":850,
+         "pageMin":2,
+         "extension":"jpg"
+      },
+      "15lvert":{
+         "pageMax":850,
+         "pageMin":2,
+         "extension":"jpg"
+      },
+      "15lQC":{
+         "pageMax":850,
+         "pageMin":2,
+         "extension":"jpg"
+      },
+      "15lsimple":{
+         "pageMax":850,
+         "pageMin":2,
+         "extension":"jpg"
+      }
+   },
+   "tabs":[
+      {
+         "id":"13lcolored",
+         "order":0,
+         "url": "tadjwid.html",
+      },
+      {
+         "id":"13lclassic",
+         "order":1
+      },
+      {
+         "id":"13lvert",
+         "order":2
+      },
+      {
+         "id":"13l",
+         "order":3
+      },
+      {
+         "id":"13lQC",
+         "order":4
+      },
+      {
+         "id":"13lenglish",
+         "order":5
+      },
+      {
+         "id":"13lsabah",
+         "order":6
+      },
+      {
+         "id":"13ltrois",
+         "order":7
+      }
+   ],
+   "languages":{
+      "fr":{
+         "titre":"Le Noble Coran:",
+         "index":"Choisir le type de moushaf",
+         "typeMoushaf":{
+            "13":"13 LIGNES",
+            "15":"15 LIGNES"
+         },
+         "moushaf":"Masahif",
+         "typePage":{
+            "1":"Page unique",
+            "2":"Page double"
+         },
+         "parametres":{
+            "pleinecran":"PLEIN ECRAN",
+            "zoom":"Zoom",
+            "nuit":"Mode sombre/clair",
+            "sd":"Page simple/double",
+            "partager":"Partager",
+            "erreur":"Remonter une erreur"
+         },
+         "sourah":"Sourah",
+         "siparah":"Djouz",
+         "quart":{
+            "titre":"Quart",
+            "1":"1ᵉʳ",
+            "2":"2ᵈ",
+            "3":"3ᵉ",
+            "4":"4ᵉ"
+         },
+         "typeAudio":{
+            "ecouter":"Écouter",
+            "page":"Cette page",
+            "quart":"Ce quart",
+            "sourate":"Cette Sourah",
+            "sipara":"Ce Sipara"
+         },
+         "recitateur":"Récitateurs",
+         "vitesse":"Vitesse",
+         "footer":{
+            "outils":"NOS OUTILS",
+            "lpl":"Ligne par ligne",
+            "langues":"LANGUES",
+            "Apropos":"À propos",
+            "ml":"Mentions légales"
+         },
+         "msgOrientation":{
+            "1":"Basculez votre appareil en",
+            "2":"PAYSAGE",
+            "3":"pour afficher correctement le mode 'page double'.",
+            "4":"Sinon, repassez en mode",
+            "5":"page simple."
+         },
+         "orientation":"Veuillez retourner votre appareil en mode paysage",
+         "toast":{
+            "play":"Lecture de l'audio...",
+            "pause":"Audio en pause",
+            "reset":"Mise à jour du récitateur et de la portion de lecture.."
+         },
+         "quiraate_prevention":{
+            "msg":"Ces indications de différenciations de lecture sont succintes, non exhaustives et possiblement inexactes. Vérifiez toujours avec un Qâri ou un ouvrage de référence avant de réciter.",
+            "lien1":"Remonter une erreur",
+            "lien2":"En savoir +"
+         },
+         "onglets":{
+            "13lcolored":"Tadjwîd",
+            "13lclassic":"Classique",
+            "13lvert":"Deeniyat",
+            "13l":"Gras",
+            "13lQC":"QC",
+            "13lenglish":"Anglais",
+            "13lsabah":"Q. Sab'ah",
+            "13ltrois":"Q. Thalatha"
+         }
+      },
+      "en":{
+         "titre":"The Holy Quran:",
+         "index":"Choose the type of mushaf",
+         "typeMoushaf":{
+            "13":"13 LINES",
+            "15":"15 LINES"
+         },
+         "moushaf":"Masahif",
+         "typePage":{
+            "1":"Single page",
+            "2":"Double page"
+         },
+         "parametres":{
+            "pleinecran":"Full screen",
+            "zoom":"Zoom",
+            "nuit":"Dark/Light mode",
+            "sd":"Single/Double page",
+            "partager":"Share",
+            "erreur":"Report an issue"
+         },
+         "sourah":"Surah",
+         "siparah":"Juz",
+         "quart":{
+            "titre":"Quarter",
+            "1":"1ˢᵗ",
+            "2":"2ⁿᵈ",
+            "3":"3ʳᵈ",
+            "4":"4ᵗʰ"
+         },
+         "typeAudio":{
+            "ecouter":"Listen",
+            "page":"This page",
+            "quart":"This quarter",
+            "sourate":"This Surah",
+            "sipara":"This Siparah"
+         },
+         "recitateur":"Reciters",
+         "vitesse":"Speed",
+         "footer":{
+            "outils":"OUR APPS",
+            "lpl":"Line by line",
+            "langues":"LANGUAGES",
+            "Apropos":"About Us",
+            "ml":"Legal terms"
+         },
+         "msgOrientation":{
+            "1":"Switch your device to",
+            "2":"LANDSCAPE",
+            "3":"to correctly display the 'double page' mode.",
+            "4":"Otherwise, switch back to",
+            "5":"single page mode"
+         },
+         "orientation":"Please flip your device to landscape mode",
+         "toast":{
+            "play":"Playing audio...",
+            "pause":"Audio paused!",
+            "reset":"Reciter and reading portion updated"
+         },
+         "quiraate_prevention":{
+            "msg":"These indications of reading differentiations are succinct, not exhaustive and possibly inaccurate. Always check with an expert reciter or reference book before reciting.",
+            "lien1":"Report an error",
+            "lien2":"Learn more"
+         },
+         "onglets":{
+            "13lcolored":"Tajweed",
+            "13lclassic":"Classic",
+            "13lvert":"Deeniyat",
+            "13l":"Bold",
+            "13lQC":"QC",
+            "13lenglish":"Translated",
+            "13lsabah":"Q. Sab'ah",
+            "13ltrois":"Q. Thalatha"
+         }
+      },
+      "ar":{
+         "titre":"القران الكريم:",
+         "index":"اختر نوع المصحف",
+         "typeMoushaf":{
+            "13":"١٣ سطرًا",
+            "15":"١٥ سطرًا"
+         },
+         "moushaf":"مصاحف",
+         "typePage":{
+            "1":"صفحة واحدة",
+            "2":"صفحة مزدوجة"
+         },
+         "parametres":{
+            "pleinecran":"تكبير الشاشة",
+            "zoom":"تكبير",
+            "nuit":"وضع الظلام / الضوء",
+            "sd":"صفحة/صفحتين",
+            "partager":"يشارك",
+            "erreur":"بلغ عن خطأ"
+         },
+         "sourah":"السورة",
+         "siparah":"الجزء",
+         "quart":{
+            "titre":"الربع",
+            "1":"١",
+            "2":"٢",
+            "3":"٣",
+            "4":"٤"
+         },
+         "typeAudio":{
+            "ecouter":"استمع",
+            "page":"هذه الصفحة",
+            "quart":"هذا الربع",
+            "sourate":"هذه السورة",
+            "sipara":"هذا الجزء"
+         },
+         "recitateur":"القراء",
+         "vitesse":"سرعة",
+         "footer":{
+            "outils":"تطبيقاتنا",
+            "lpl":"سطراً سطراً",
+            "langues":"اللغات",
+            "Apropos":"معلومات عنا",
+            "ml":"مصطلحات قانونية"
+         },
+         "msgOrientation":{
+            "1":"قم بتدوير جهازك إلى",
+            "2":"الوضع الأفقي",
+            "3":"لعرض وضع 'الصفحة المزدوجة' بشكل صحيح.",
+            "4":"خلاف ذلك ، عد إلى",
+            "5":"وضع الصفحة الواحدة"
+         },
+         "orientation":"يرجى قلب جهازك إلى الوضع الأفقي",
+         "toast":{
+            "play":"تشغيل التلاوة...",
+            "pause":"التلاوة موقوفة!",
+            "reset":"تم تحديث القارئ وجزء التلاوة"
+         },
+         "quiraate_prevention":{
+            "msg":"هذه المؤشرات على تمايز القراءة موجزة وليست شاملة وربما غير دقيقة. تحقق دائمًا من قارئ خبير أو كتاب مرجعي قبل التلاوة.",
+            "lien1":"الإبلاغ عن خطأ",
+            "lien2":"اقرأ المزيد"
+         },
+         "onglets":{
+            "13lcolored":"ملون",
+            "13lclassic":"كلاسيكي",
+            "13lvert":"دينيات",
+            "13l":"جراس",
+            "13lQC":"QC",
+            "13lenglish":"انجليزية",
+            "13lsabah":"القرآءات الـسـبـعـة",
+            "13ltrois":"القرآءات الثلاثة "
+         }
+      },
+      "ur":{
+         "titre":"قرآن پاک:",
+         "index":"مصحف کی قسم کا انتخاب کریں",
+         "typeMoushaf":{
+            "13":"١٣ لائنیں",
+            "15":"١٥ لائنیں"
+         },
+         "moushaf":"مصاحف",
+         "typePage":{
+            "1":"ایک صفحہ",
+            "2":"ڈبل صفحہ"
+         },
+         "parametres":{
+            "pleinecran":"بڑی اسکرین",
+            "zoom":"زوم",
+            "nuit":"گہرا/لائٹ موڈ",
+            "sd":"ایک/دو صفحہ",
+            "partager":"شیئر کریں",
+            "erreur":"مسئلہ کی اطلاع دیں"
+         },
+         "sourah":"سورت",
+         "siparah":"سپارہ",
+         "quart":{
+            "titre":"چوتهائی",
+            "1":"١",
+            "2":"٢",
+            "3":"٣",
+            "4":"٤"
+         },
+         "typeAudio":{
+            "ecouter":"سننا",
+            "page":"اس صفحہ",
+            "quart":"اس چوتهائی",
+            "sourate":"اس سورت",
+            "sipara":"اس سورت"
+         },
+         "recitateur":"القرا",
+         "vitesse":"رفتار",
+         "footer":{
+            "outils":"ہماری ایپس",
+            "lpl":"لائن فی لائن",
+            "langues":"زبانیں",
+            "Apropos":"ہمارے بارے میں",
+            "ml":"قانونی شرائط"
+         },
+         "msgOrientation":{
+            "1":"اپنے موبائل کو",
+            "2":"لینڈ اسکیپ",
+            "3":"'ڈبل پیج' موڈ کو صحیح طریقے سے دکھانے کے لیے۔",
+            "4":"بصورت دیگر، واپس جائیں",
+            "5":"سنگل پیج موڈ"
+         },
+         "orientation":"براہ کرم اپنے آلے کو لینڈ اسکیپ موڈ میں پلٹائیں۔",
+         "toast":{
+            "play":"تلاوت چل رہا ہے...",
+            "pause":"تلاوت موقوف!",
+            "reset":"تلاوت کرنے والے اور پڑھنے والے حصے کو اپ ڈیٹ کیا گیا۔"
+         },
+         "quiraate_prevention":{
+            "msg":"پڑھنے کی تفریق کے یہ اشارے مختصر ہیں، مکمل نہیں اور ممکنہ طور پر غلط ہیں۔ تلاوت کرنے سے پہلے ہمیشہ ماہر قاری یا حوالہ کتاب سے رجوع کریں",
+            "lien1":"غلطی کی اطلاع دیں",
+            "lien2":"اورجانیے"
+         },
+         "onglets":{
+            "13lcolored":"رنگین",
+            "13lclassic":"کلاسک",
+            "13lvert":"دينيات",
+            "13l":"گھاس",
+            "13lQC":"QC",
+            "13lenglish":"انگریزی",
+            "13lsabah":"قراءات الـسـبـعـة",
+            "13ltrois":"قراءات الثلاثة"
+         }
+      }
+   },
+   
+              "sourates": [
+                { "value": "1", "text": "1 - Al Fatihah الفاتحة -", "group": "01 ⮕ 04" },
+                { "value": "2", "text": "2 - Al Baqarah البقرة", "group": "01 ⮕ 04" },
+                { "value": "67", "text": "3 - Al Imran آل عمران", "group": "01 ⮕ 04" },
+                { "value": "105", "text": "4 - An Nisaa النساء", "group": "01 ⮕ 04" },
+
+                { "value": "146", "text": "5 - Al Maaidah المائدة", "group": "05 ⮕ 09" },
+                { "value": "176", "text": "6 - Al An'aam الأنعام", "group": "05 ⮕ 09" },
+                { "value": "208", "text": "7 - Al A'raaf الأعراف", "group": "05 ⮕ 09" },
+                { "value": "245", "text": "8 - Al Anfaal الأنفال", "group": "05 ⮕ 09" },
+
+                { "value": "259", "text": "9 - At Tawbah التوبة", "group": "10 ⮕ 14" },
+                { "value": "287", "text": "10 - Yunus يونس", "group": "10 ⮕ 14" },
+                { "value": "307", "text": "11 - Hud هود", "group": "10 ⮕ 14" },
+                { "value": "327", "text": "12 - Yusuf يوسف", "group": "10 ⮕ 14" },
+                { "value": "345", "text": "13 - Ar Ra'd الرعد", "group": "10 ⮕ 14" },
+                { "value": "354", "text": "14 - Ibrahim ابراهيم", "group": "10 ⮕ 14" },
+                { "value": "363", "text": "15 - Al Hijr الحجر", "group": "10 ⮕ 14" },
+
+                { "value": "371", "text": "16 - An Nahl النحل", "group": "15 ⮕ 19" },
+                { "value": "392", "text": "17 - Al Israa الإسراء", "group": "15 ⮕ 19" },
+                { "value": "407", "text": "18 - Al Kahf الكهف", "group": "15 ⮕ 19" },
+                { "value": "424", "text": "19 - Al Maryam مريم", "group": "15 ⮕ 19" },
+                { "value": "434", "text": "20 - Taa-Haa طه", "group": "15 ⮕ 19" },
+                { "value": "448", "text": "21 - Al Anbiyaa الأنبياء", "group": "15 ⮕ 19" },
+                { "value": "461", "text": "22 - Al Hajj الحج", "group": "15 ⮕ 19" },
+                { "value": "476", "text": "23 - Al Muminoon المؤمنون", "group": "15 ⮕ 19" },
+                { "value": "486", "text": "24 - Al Noor النور", "group": "15 ⮕ 19" },
+                { "value": "500", "text": "25 - Al Furqaan الفرقان", "group": "15 ⮕ 19" },
+                { "value": "510", "text": "26 - Al Shu'araa الشعراء", "group": "15 ⮕ 19" },
+                { "value": "524", "text": "27 - Al Naml النمل", "group": "15 ⮕ 19" },
+
+                { "value": "536", "text": "28 - Al Qasas القصص", "group": "20 ⮕ 24" },
+                { "value": "551", "text": "29 - Al 'Ankaboot العنكبوت", "group": "20 ⮕ 24" },
+                { "value": "561", "text": "30 - Ar Room الروم", "group": "20 ⮕ 24" },
+                { "value": "570", "text": "31 - Luqman لقمان", "group": "20 ⮕ 24" },
+                { "value": "576", "text": "32 - As Sajdah السجدة", "group": "20 ⮕ 24" },
+                { "value": "580", "text": "33 - Al Ahzaab الأحزاب", "group": "20 ⮕ 24" },
+                { "value": "594", "text": "34 - Saba سبإ", "group": "20 ⮕ 24" },
+                { "value": "602", "text": "35 - Faatir فاطر", "group": "20 ⮕ 24" },
+                { "value": "610", "text": "36 - Yaseen يس", "group": "20 ⮕ 24" },
+                { "value": "617", "text": "37 - As Saaffaat الصافات", "group": "20 ⮕ 24" },
+                { "value": "627", "text": "38 - Saad ص", "group": "20 ⮕ 24" },
+                { "value": "634", "text": "39 - Az Zumar الزمر", "group": "20 ⮕ 24" },
+                { "value": "646", "text": "40 - Al Ghaafir غافر | Al Mumin", "group": "20 ⮕ 24" },
+                { "value": "658", "text": "41 - Fussilat فصلت | Ha-mîm Sadjdah", "group": "20 ⮕ 24" },
+
+                { "value": "667", "text": "42 - Ash Shura الشورى", "group": "25 ⮕ 29" },
+                { "value": "676", "text": "43 - Az Zukhruf الزخرف", "group": "25 ⮕ 29" },
+                { "value": "685", "text": "44 - Ad Dukhaan الدخان", "group": "25 ⮕ 29" },
+                { "value": "690", "text": "45 - Al Jaathiyah الجاثية", "group": "25 ⮕ 29" },
+                { "value": "696", "text": "46 - Al Ahqaf الأحقاف", "group": "25 ⮕ 29" },
+                { "value": "704", "text": "47 - Muhammad محمد", "group": "25 ⮕ 29" },
+                { "value": "709", "text": "48 - Al Fath الفتح", "group": "25 ⮕ 29" },
+                { "value": "715", "text": "49 - Al Hujuraat الحجرات", "group": "25 ⮕ 29" },
+                { "value": "720", "text": "50 - Qaaf ق", "group": "25 ⮕ 29" },
+                { "value": "724", "text": "51 - Ad Dhaariyat الذاريات", "group": "25 ⮕ 29" },
+                { "value": "728", "text": "52 - At Tur الطور", "group": "25 ⮕ 29" },
+                { "value": "731", "text": "53 - An Najm النجم", "group": "25 ⮕ 29" },
+                { "value": "735", "text": "54 - Al Qamar القمر", "group": "25 ⮕ 29" },
+                { "value": "739", "text": "55 - Al Rahmaan الرحمن", "group": "25 ⮕ 29" },
+                { "value": "744", "text": "56 - Al Waaqiah الواقعة", "group": "25 ⮕ 29" },
+                { "value": "749", "text": "57 - Al Hadid الحديد", "group": "25 ⮕ 29" },
+                { "value": "756", "text": "58 - Al Mujaadilah المجادلة", "group": "25 ⮕ 29" },
+                { "value": "760", "text": "59 - Al Hashr الحشر", "group": "25 ⮕ 29" },
+                { "value": "765", "text": "60 - Al Mumtahanah الممتحنة", "group": "25 ⮕ 29" },
+                { "value": "769", "text": "61 - As Saff الصف", "group": "25 ⮕ 29" },
+                { "value": "772", "text": "62 - Al Jumu'a الجمعة", "group": "25 ⮕ 29" },
+                { "value": "774", "text": "63 - Al Munaafiqoon المنافقون", "group": "25 ⮕ 29" },
+                { "value": "776", "text": "64 - At Taghaabun التغابن", "group": "25 ⮕ 29" },
+                { "value": "779", "text": "65 - At Talaaq الطلاق", "group": "25 ⮕ 29" },
+                { "value": "782", "text": "66 - At Tahrim التحريم", "group": "25 ⮕ 29" },
+                { "value": "786", "text": "67 - Al Mulk الملك", "group": "25 ⮕ 29" },
+                { "value": "789", "text": "68 - Al Qalam القلم", "group": "25 ⮕ 29" },
+                { "value": "793", "text": "69 - Al Haaqqah الحاقة", "group": "25 ⮕ 29" },
+                { "value": "796", "text": "70 - Al Ma'aarij المعارج", "group": "25 ⮕ 29" },
+                { "value": "799", "text": "71 - Nooh نوح", "group": "25 ⮕ 29" },
+                { "value": "802", "text": "72 - Al Jinn الجن", "group": "25 ⮕ 29" },
+                { "value": "805", "text": "73 - Al Muzzammil المزمل", "group": "25 ⮕ 29" },
+                { "value": "807", "text": "74 - Al Muddaththir المدثر", "group": "25 ⮕ 29" },
+                { "value": "810", "text": "75 - Al Qiyaamah القيامة", "group": "25 ⮕ 29" },
+                { "value": "812", "text": "76 - Al Insaan الانسان", "group": "25 ⮕ 29" },
+                { "value": "815", "text": "77 - Al Mursalaat المرسلات", "group": "25 ⮕ 29" },
+
+                { "value": "818", "text": "78 - An Naba النبإ", "group": "30" },
+                { "value": "819", "text": "79 - Al Naazi'aat النازعات", "group": "30" },
+                { "value": "821", "text": "80 - 'Abasa عبس", "group": "30" },
+                { "value": "823", "text": "81 - At Takwir التكوير", "group": "30" },
+                { "value": "824", "text": "82 - Al Infitaar الإنفطار", "group": "30" },
+                { "value": "825", "text": "83 - Al Mutaffifin المطففين", "group": "30" },
+                { "value": "827", "text": "84 - Al Inshiqaaq الإنشقاق", "group": "30" },
+                { "value": "828", "text": "85 - Al Burooj البروج", "group": "30" },
+                { "value": "829", "text": "86 - At Taariq الطارق", "group": "30" },
+                { "value": "830", "text": "87 - Al A'laa الأعلى", "group": "30" },
+                { "value": "831", "text": "88 - Al Ghaashiyah الغاشية", "group": "30" },
+                { "value": "832", "text": "89 - Al Fajr الفجر", "group": "30" },
+                { "value": "833", "text": "90 - Al Balad البلد", "group": "30" },
+                { "value": "835", "text": "91 - Ash Shams الشمس", "group": "30" },
+                { "value": "836", "text": "92 - Al Lail الليل", "group": "30" },
+                { "value": "837", "text": "93 - Ad Dhuhaa الضحى", "group": "30" },
+                { "value": "837", "text": "94 - Ash Sharh الشرح", "group": "30" },
+                { "value": "838", "text": "95 - At Tin التين", "group": "30" },
+                { "value": "838", "text": "96 - Al Alaq العلق", "group": "30" },
+                { "value": "839", "text": "97 - Al Qadr القدر", "group": "30" },
+                { "value": "839", "text": "98 - Al Bayyinah البينة", "group": "30" },
+                { "value": "840", "text": "99 - Az Zalzalah الزلزلة", "group": "30" },
+                { "value": "841", "text": "100 - Al 'Aadiyaat العاديات", "group": "30" },
+                { "value": "842", "text": "101 - Al Qaari'ah القارعة", "group": "30" },
+                { "value": "842", "text": "102 - At Takaathur التكاثر", "group": "30" },
+                { "value": "843", "text": "103 - Al Asr العصر", "group": "30" },
+                { "value": "843", "text": "104 - Al Humazah الهمزة", "group": "30" },
+                { "value": "843", "text": "105 - Al Fil الفيل", "group": "30" },
+                { "value": "844", "text": "106 - Quraish قريش", "group": "30" },
+                { "value": "844", "text": "107 - Al Maa'un الماعون", "group": "30" },
+                { "value": "845", "text": "108 - Al Kawthar الكوثر", "group": "30" },
+                { "value": "845", "text": "109 - Al Kaafiroon الكافرون", "group": "30" },
+                { "value": "845", "text": "110 - An Nasr النصر", "group": "30" },
+                { "value": "846", "text": "111 - Al Masad المسد", "group": "30" },
+                { "value": "846", "text": "112 - Al Ikhlaas الإخلاص", "group": "30" },
+                { "value": "846", "text": "113 - Al Falaq الفلق", "group": "30" },
+                { "value": "847", "text": "114 - An Naas الناس", "group": "30" }
+              ],
+
+              "siparahs": [
+                { "value": "1", "text": "1 ・ الٓمٓ", "group": "01 ⮕ 09" },
+                { "value": "28", "text": "2 ・ سَيَقُولُ", "group": "01 ⮕ 09" },
+                { "value": "56", "text": "3 ・ تِلْكَ ٱلرُّسُلُ", "group": "01 ⮕ 09" },
+                { "value": "84", "text": "4 ・ لَن تَنَالُوا۟", "group": "01 ⮕ 09" },
+                { "value": "112", "text": "5 ・ وَٱلْمُحْصَنَـٰتُ", "group": "01 ⮕ 09" },
+                { "value": "140", "text": "6 ・ لَّا يُحِبُّ", "group": "01 ⮕ 09" },
+                { "value": "168", "text": "7 ・ وَإِذَا سَمِعُوا۟", "group": "01 ⮕ 09" },
+                { "value": "196", "text": "8 ・ وَلَوْ أَنَّنَا", "group": "01 ⮕ 09" },
+                { "value": "224", "text": "9 ・ قَالَ ٱلْمَلَأُ", "group": "01 ⮕ 09" },
+
+                { "value": "252", "text": "10 ・ وَٱعْلَمُوٓا۟", "group": "10 ⮕ 19" },
+                { "value": "280", "text": "11 ・ يَعْتَذِرُونَ", "group": "10 ⮕ 19" },
+                { "value": "308", "text": "12 ・ وَمَا مِن دَآبَّةٍۢ", "group": "10 ⮕ 19" },
+                { "value": "336", "text": "13 ・ وَمَآ أُبَرِّئُ", "group": "10 ⮕ 19" },
+                { "value": "365", "text": "14 ・ رُّبَمَا يَوَدُّ", "group": "10 ⮕ 19" },
+                { "value": "392", "text": "15 ・ سُبْحَـٰنَ ٱلَّذِىٓ", "group": "10 ⮕ 19" },
+                { "value": "420", "text": "16 ・ قَالَ أَلَمْ", "group": "10 ⮕ 19" },
+                { "value": "448", "text": "17 ・ ٱقْتَرَبَ لِلنَّاسِ", "group": "10 ⮕ 19" },
+                { "value": "476", "text": "18 ・ قَدْ أَفْلَحَ ٱلْمُؤْمِنُونَ", "group": "10 ⮕ 19" },
+                { "value": "504", "text": "19 ・ وَقَالَ ٱلَّذِينَ", "group": "10 ⮕ 19" },
+
+                { "value": "532", "text": "20 ・ أَمَّنْ خَلَقَ", "group": "20 ⮕ 30" },
+                { "value": "558", "text": "21 ・ ٱتْلُ مَآ", "group": "20 ⮕ 30" },
+                { "value": "586", "text": "22 ・ وَمَن يَقْنُتْ", "group": "20 ⮕ 30" },
+                { "value": "612", "text": "23 ・ وَمَا لِىَ لَآ", "group": "20 ⮕ 30" },
+                { "value": "640", "text": "24 ・ فَمَنْ أَظْلَمُ", "group": "20 ⮕ 30" },
+                { "value": "666", "text": "25 ・ إِلَيْهِ يُرَدُّ", "group": "20 ⮕ 30" },
+                { "value": "696", "text": "26 ・ حمٓ", "group": "20 ⮕ 30" },
+                { "value": "726", "text": "27 ・ قَالَ فَمَا", "group": "20 ⮕ 30" },
+                { "value": "756", "text": "28 ・ قَدْ سَمِعَ ٱللَّهُ", "group": "20 ⮕ 30" },
+                { "value": "786", "text": "29 ・ تَبَـٰرَكَ ٱلَّذِى", "group": "20 ⮕ 30" },
+                { "value": "818", "text": "30 ・ عَمَّ يَتَسَآءَلُونَ", "group": "20 ⮕ 30" }
+              ],
+
+              "quarts": [
+                { "value": "1", "text": "1⁄₄" },
+                { "value": "2", "text": "2⁄₄" },
+                { "value": "3", "text": "3⁄₄" },
+                { "value": "4", "text": "4⁄₄" }
+              ],
+
+              "qaris": [
+                { "value": "Abu%20Bakr%20al%20Shatri%20", "text": "A. Bakr Chatri" },
+                { "value": "Essack", "text": "Ayoub Essack (Tarawîh)" },
+                { "value": "Balilah", "text": "Bandar Balîlah" },
+                { "value": "Hindawi", "text": "H. R. Al Hindawi" },
+                { "value": "Mahmoud%20Khalil%20al%20Hussary%20", "text": "M. K. Al Houssary" },
+                { "value": "Maher%20al%20Muaiqly%20", "text": "Mahir Al Mou'ayqli" },
+                { "value": "Mouhaysni", "text": "M. Al Mouhaysni (rapide)" },
+                { "value": "Qatami", "text": "Nassîr Al Qatami (lent)" },
+                { "value": "Saad%20al%20Ghamdi%20", "text": "Saad Al Ghamdi" },
+                { "value": "Chouraym", "text": "Sa'oud Al Chouraym (rapide)" },
+                { "value": "Dossari", "text": "Yassir Al Dossari (lent)" }
+              ],
+
+              "typeAudio": [
+                { "value": "Page", "text": "Cette page" },
+                { "value": "Quart", "text": "Ce quart", "disabled": true },
+                { "value": "Sourah", "text": "Cette Sourah", "disabled": true },
+                { "value": "Sipara", "text": "Ce Sipara", "disabled": true }
+              ]
+      
+   
+   
+}

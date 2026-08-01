@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestion des Onglets</title>
+  <!-- Inclusion de jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Inclusion de jQuery UI pour la fonctionnalité de glisser-déposer -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <!-- Feuille de style pour jQuery UI -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!-- Feuille de style pour le design -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    #tabsList {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+    #tabsList th, #tabsList td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    #tabsList th {
+      background-color: #f4f4f4;
+    }
+    .btn {
+      padding: 6px 12px;
+      margin: 2px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+    }
+    .btn-edit {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .btn-delete {
+      background-color: #f44336;
+      color: white;
+    }
+    .btn-up, .btn-down {
+      background-color: #008CBA;
+      color: white;
+    display: flex;
+	  
+    }
+    .btn-add {
+      background-color: #e7e7e7;
+      color: black;
+      margin-bottom: 20px;
+    }
+    #addTabForm, #editTabForm {
+      display: none;
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    #addTabForm h2, #editTabForm h2 {
+      margin-top: 0;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+    input[type="text"], select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+    }
+    .form-actions {
+      text-align: right;
+    }
+    .form-actions .btn {
+      margin-left: 10px;
+    }
+    #saveConfigBtn {
+      display: block;
+      margin: 0 auto;
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      #tabsList, #tabsList th, #tabsList td {
+        display: block;
+      }
+      #tabsList th, #tabsList td {
+        text-align: left;
+      }
+      #tabsList th {
+        background-color: transparent;
+        border: none;
+        padding-top: 10px;
+      }
+      #tabsList td {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+      }
+      .btn {
+        width: 100%;
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Gestion des Onglets</h1>
+
+  <!-- Bouton pour ajouter un nouvel onglet -->
+  <button id="addTabBtn" class="btn btn-add"> ➕ Ajouter un Onglet</button>
+
+  <!-- Tableau des onglets -->
+  <table id="tabsList">
+    <thead>
+      <tr>
+        <th>Ordre</th>
+        <th>ID</th>
+        <th>Noms par Langue</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Les onglets seront insérés ici dynamiquement -->
+    </tbody>
+  </table>
+
+  <!-- Formulaire pour ajouter un onglet -->
+  <div id="addTabForm">
+    <h2>Ajouter un Nouvel Onglet</h2>
+    <form>
+      <label for="newTabId">ID de l'Onglet</label>
+      <input type="text" id="newTabId" required>
+
+      <label for="newTabOrder">Position (après l'onglet)</label>
+      <select id="newTabOrder">
+        <!-- Options dynamiques -->
+      </select>
+
+      <h3>Noms par Langue</h3>
+      <div id="newTabLangs">
+        <!-- Champs dynamiques pour les langues -->
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn" id="cancelAddTab">Annuler</button>
+        <button type="submit" class="btn btn-add">Ajouter</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Formulaire pour éditer un onglet -->
+  <div id="editTabForm">
+    <h2>Modifier l'Onglet</h2>
+    <form>
+      <input type="hidden" id="editTabIndex">
+
+      <label for="editTabId">ID de l'Onglet</label>
+      <input type="text" id="editTabId" required>
+
+      <label for="editTabOrder">Position</label>
+      <select id="editTabOrder">
+        <!-- Options dynamiques -->
+      </select>
+
+      <h3>Noms par Langue</h3>
+      <div id="editTabLangs">
+        <!-- Champs dynamiques pour les langues -->
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn" id="cancelEditTab">Annuler</button>
+        <button type="submit" class="btn btn-edit">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Bouton pour sauvegarder la configuration -->
+  <button id="saveConfigBtn" class="btn btn-add">💾 Sauvegarder la Configuration</button>
+
+  <!-- Inclusion du script principal -->
+  <script>
+    $(document).ready(function() {
+      let configData;
+      let languages;
+      let tabs;
+
+      // Fonction pour charger le fichier config.json
+      function loadConfig() {
+        $.getJSON('js/config.json', function(data) {
+          configData = data;
+          languages = data.languages;
+          tabs = data.tabs;
+          renderTabsList();
+        }).fail(function() {
+          alert("Erreur lors du chargement du fichier config.json");
+        });
+      }
+
+      // Fonction pour afficher la liste des onglets
+      function renderTabsList() {
+        const tbody = $('#tabsList tbody');
+        tbody.empty();
+
+        // Trier les onglets par ordre
+        tabs.sort((a, b) => a.order - b.order);
+
+        tabs.forEach((tab, index) => {
+          const tr = $('<tr></tr>');
+
+          // Colonne Ordre
+          tr.append('<td>' + tab.order + '</td>');
+
+          // Colonne ID
+          tr.append('<td>' + tab.id + '</td>');
+
+          // Colonne Noms par Langue
+          let names = '';
+          for (let lang in languages) {
+            const langName = languages[lang].onglets[tab.id] || '-';
+            names += '<strong>' + lang + ':</strong> ' + langName + '<br>';
+          }
+          tr.append('<td>' + names + '</td>');
+
+          // Colonne Actions
+          const actionsTd = $('<td></td>');
+
+          // Bouton Modifier
+          const editBtn = $('<button class="btn btn-edit">Modifier ✏</button>');
+          editBtn.click(function() {
+            openEditTabForm(index);
+          });
+          actionsTd.append(editBtn);
+
+          // Bouton Supprimer
+          const deleteBtn = $('<button class="btn btn-delete">Supprimer 🗑</button>');
+          deleteBtn.click(function() {
+            if (confirm('Êtes-vous sûr de vouloir supprimer cet onglet ?')) {
+              deleteTab(index);
+            }
+          });
+          actionsTd.append(deleteBtn);
+
+          // Bouton Monter
+          if (index > 0) {
+            const upBtn = $('<button class="btn btn-up">↑</button>');
+            upBtn.click(function() {
+              moveTab(index, index - 1);
+            });
+            actionsTd.append(upBtn);
+          }
+
+          // Bouton Descendre
+          if (index < tabs.length - 1) {
+            const downBtn = $('<button class="btn btn-down">↓</button>');
+            downBtn.click(function() {
+              moveTab(index, index + 1);
+            });
+            actionsTd.append(downBtn);
+          }
+
+          tr.append(actionsTd);
+          tbody.append(tr);
+        });
+
+        updateOrderOptions();
+      }
+
+      // Fonction pour mettre à jour les options de position
+      function updateOrderOptions() {
+        const orderSelects = $('#newTabOrder, #editTabOrder');
+        orderSelects.empty();
+
+        tabs.forEach((tab, index) => {
+          const option = $('<option></option>').val(index).text('Après ' + tab.id);
+          orderSelects.append(option);
+        });
+
+        // Ajouter une option pour la dernière position
+        const lastOption = $('<option></option>').val(tabs.length).text('En dernier');
+        orderSelects.append(lastOption);
+      }
+
+      // Fonction pour ouvrir le formulaire d'ajout d'un onglet
+      function openAddTabForm() {
+        $('#addTabForm').show();
+        $('#addTabForm form')[0].reset();
+        generateLangFields('#newTabLangs');
+      }
+
+      // Fonction pour ouvrir le formulaire d'édition d'un onglet
+      function openEditTabForm(index) {
+        const tab = tabs[index];
+        $('#editTabIndex').val(index);
+        $('#editTabId').val(tab.id);
+        $('#editTabOrder').val(index);
+        generateLangFields('#editTabLangs', tab.id);
+        $('#editTabForm').show();
+      }
+
+      // Fonction pour générer les champs pour les langues
+      function generateLangFields(containerSelector, tabId = '') {
+        const container = $(containerSelector);
+        container.empty();
+
+        for (let lang in languages) {
+          const label = $('<label></label>').text('Nom en ' + lang);
+          const input = $('<input type="text">').attr('id', 'lang-' + lang).data('lang', lang);
+          if (tabId) {
+            const langName = languages[lang].onglets[tabId] || '';
+            input.val(langName);
+          }
+          container.append(label);
+          container.append(input);
+        }
+      }
+
+      // Fonction pour ajouter un nouvel onglet
+      $('#addTabForm form').submit(function(e) {
+        e.preventDefault();
+        const newTabId = $('#newTabId').val().trim();
+        const position = parseInt($('#newTabOrder').val());
+
+        // Vérifier si l'ID existe déjà
+        if (tabs.some(tab => tab.id === newTabId)) {
+          alert('Un onglet avec cet ID existe déjà.');
+          return;
+        }
+
+        // Récupérer les noms par langue
+        const names = {};
+        $('#newTabLangs input').each(function() {
+          const lang = $(this).data('lang');
+          const name = $(this).val().trim();
+          if (name) {
+            if (!languages[lang].onglets) {
+              languages[lang].onglets = {};
+            }
+            languages[lang].onglets[newTabId] = name;
+          }
+        });
+
+        // Insérer le nouvel onglet à la position spécifiée
+        const newTab = { id: newTabId, order: position };
+        tabs.splice(position, 0, newTab);
+
+        // Réajuster les ordres
+        tabs.forEach((tab, index) => {
+          tab.order = index;
+        });
+
+        $('#addTabForm').hide();
+        renderTabsList();
+      });
+
+      // Fonction pour enregistrer les modifications d'un onglet
+      $('#editTabForm form').submit(function(e) {
+        e.preventDefault();
+        const index = parseInt($('#editTabIndex').val());
+        const tab = tabs[index];
+        const newTabId = $('#editTabId').val().trim();
+        const newPosition = parseInt($('#editTabOrder').val());
+
+        // Vérifier si l'ID a changé et s'il existe déjà
+        if (newTabId !== tab.id && tabs.some(t => t.id === newTabId)) {
+          alert('Un onglet avec cet ID existe déjà.');
+          return;
+        }
+
+        // Mettre à jour l'ID
+        tab.id = newTabId;
+
+        // Récupérer les noms par langue
+        $('#editTabLangs input').each(function() {
+          const lang = $(this).data('lang');
+          const name = $(this).val().trim();
+          if (!languages[lang].onglets) {
+            languages[lang].onglets = {};
+          }
+          languages[lang].onglets[newTabId] = name;
+        });
+
+        // Déplacer l'onglet à la nouvelle position
+        tabs.splice(index, 1);
+        tabs.splice(newPosition, 0, tab);
+
+        // Réajuster les ordres
+        tabs.forEach((tab, idx) => {
+          tab.order = idx;
+        });
+
+        $('#editTabForm').hide();
+        renderTabsList();
+      });
+
+      // Fonction pour supprimer un onglet
+      function deleteTab(index) {
+        const tab = tabs[index];
+        tabs.splice(index, 1);
+
+        // Supprimer les noms dans les langues
+        for (let lang in languages) {
+          if (languages[lang].onglets && languages[lang].onglets[tab.id]) {
+            delete languages[lang].onglets[tab.id];
+          }
+        }
+
+        // Réajuster les ordres
+        tabs.forEach((tab, idx) => {
+          tab.order = idx;
+        });
+
+        renderTabsList();
+      }
+
+      // Fonction pour déplacer un onglet
+      function moveTab(fromIndex, toIndex) {
+        const tab = tabs[fromIndex];
+        tabs.splice(fromIndex, 1);
+        tabs.splice(toIndex, 0, tab);
+
+        // Réajuster les ordres
+        tabs.forEach((tab, idx) => {
+          tab.order = idx;
+        });
+
+        renderTabsList();
+      }
+
+      // Bouton pour annuler l'ajout d'un onglet
+      $('#cancelAddTab').click(function() {
+        $('#addTabForm').hide();
+      });
+
+      // Bouton pour annuler l'édition d'un onglet
+      $('#cancelEditTab').click(function() {
+        $('#editTabForm').hide();
+      });
+
+      // Bouton pour ouvrir le formulaire d'ajout
+      $('#addTabBtn').click(function() {
+        openAddTabForm();
+      });
+
+      // Bouton pour sauvegarder la configuration
+      $('#saveConfigBtn').click(function() {
+        const updatedConfig = JSON.stringify(configData, null, 2);
+        downloadConfig(updatedConfig);
+      });
+
+      // Fonction pour télécharger le fichier config.json mis à jour
+      function downloadConfig(content) {
+        const blob = new Blob([content], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'config.json';
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+
+      // Charger la configuration au démarrage
+      loadConfig();
+    });
+  </script>
+
+</body>
+</html>
